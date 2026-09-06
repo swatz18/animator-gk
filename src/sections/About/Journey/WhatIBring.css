@@ -1,0 +1,469 @@
+/* =========================================================
+   WHAT I BRING
+========================================================= */
+
+.what-bring {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  box-sizing: border-box;
+
+  padding: 70px 5.5vw 55px;
+
+  background: #020207;
+
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.what-bring-header {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  margin-bottom: 42px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.what-bring-header h2 {
+  margin: 0;
+
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: clamp(55px, 5vw, 78px);
+
+  font-weight: 700;
+
+  line-height: 0.95;
+
+  letter-spacing: 0.01em;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   TITLE LINE
+========================================================= */
+
+.what-bring-line {
+  width: 62px;
+  height: 2px;
+
+  margin: 22px 0 20px;
+
+  background: #8b19ff;
+
+  box-shadow:
+    0 0 12px rgba(139, 25, 255, 0.55);
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.what-bring-header p {
+  margin: 0;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.82);
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.what-bring-grid {
+  width: 100%;
+
+  max-width: 1380px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 38px;
+}
+
+
+/* =========================================================
+   ITEM
+========================================================= */
+
+.what-bring-item {
+  position: relative;
+
+  min-height: 175px;
+
+  display: grid;
+
+  grid-template-columns:
+    135px
+    90px
+    1fr
+    45px;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.13);
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.what-bring-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100px;
+  height: 100px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 68px;
+
+  font-weight: 300;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 0 12px rgba(139, 25, 255, 0.2);
+}
+
+
+/* Purple outlined look */
+
+.what-bring-item:nth-child(1) .what-bring-icon,
+.what-bring-item:nth-child(4) .what-bring-icon,
+.what-bring-item:nth-child(6) .what-bring-icon {
+  color: #8b19ff;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.what-bring-number {
+  align-self: center;
+
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: 66px;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  color: transparent;
+
+  -webkit-text-stroke: 1px #8b19ff;
+
+  text-shadow:
+    0 0 18px rgba(139, 25, 255, 0.12);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.what-bring-content {
+  padding-right: 25px;
+}
+
+
+.what-bring-content h3 {
+  margin: 0 0 12px;
+
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: 25px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  color: #ffffff;
+}
+
+
+.what-bring-content p {
+  max-width: 300px;
+
+  margin: 0;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.78);
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.what-bring-arrow {
+  justify-self: center;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 32px;
+
+  font-weight: 300;
+
+  color: #8b19ff;
+
+  transition:
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+
+.what-bring-item:hover .what-bring-arrow {
+  transform: translateX(6px);
+
+  text-shadow:
+    0 0 12px rgba(139, 25, 255, 0.7);
+}
+
+
+/* =========================================================
+   VERTICAL DIVIDER
+========================================================= */
+
+/* Divider between left and right columns */
+
+.what-bring-item:nth-child(3) {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   DESKTOP COLUMN DIVIDER
+========================================================= */
+
+.what-bring-grid::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 1px;
+
+  height: 78%;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(139, 25, 255, 0.35),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   DESKTOP HEIGHT ADJUSTMENT
+========================================================= */
+
+@media (max-height: 800px) and (min-width: 1001px) {
+
+  .what-bring {
+    padding-top: 50px;
+    padding-bottom: 35px;
+  }
+
+  .what-bring-header {
+    margin-bottom: 25px;
+  }
+
+  .what-bring-header h2 {
+    font-size: 62px;
+  }
+
+  .what-bring-line {
+    margin: 15px 0 12px;
+  }
+
+  .what-bring-header p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .what-bring-item {
+    min-height: 145px;
+  }
+
+  .what-bring-icon {
+    font-size: 58px;
+  }
+
+  .what-bring-number {
+    font-size: 58px;
+  }
+
+  .what-bring-content h3 {
+    font-size: 22px;
+  }
+
+  .what-bring-content p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .what-bring {
+    min-height: auto;
+
+    padding:
+      80px
+      6vw;
+  }
+
+  .what-bring-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .what-bring-grid::before {
+    display: none;
+  }
+
+  .what-bring-item:nth-child(3) {
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.13);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .what-bring {
+    padding:
+      70px
+      25px;
+  }
+
+
+  .what-bring-header {
+    margin-bottom: 35px;
+  }
+
+
+  .what-bring-header h2 {
+    font-size: 50px;
+  }
+
+
+  .what-bring-header p {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+
+  .what-bring-header p br {
+    display: none;
+  }
+
+
+  .what-bring-item {
+    min-height: 145px;
+
+    grid-template-columns:
+      65px
+      55px
+      1fr
+      25px;
+  }
+
+
+  .what-bring-icon {
+    width: 55px;
+    height: 55px;
+
+    font-size: 38px;
+  }
+
+
+  .what-bring-number {
+    font-size: 43px;
+  }
+
+
+  .what-bring-content {
+    padding-right: 10px;
+  }
+
+
+  .what-bring-content h3 {
+    font-size: 18px;
+
+    margin-bottom: 8px;
+  }
+
+
+  .what-bring-content p {
+    font-size: 11px;
+
+    line-height: 1.55;
+  }
+
+
+  .what-bring-arrow {
+    font-size: 24px;
+  }
+}

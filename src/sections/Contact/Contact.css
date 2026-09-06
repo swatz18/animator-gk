@@ -1,0 +1,948 @@
+/* =====================================================
+   CONTACT PAGE
+===================================================== */
+
+.contact-page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100svh;
+  height: auto;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 82% 68%,
+      rgba(120, 20, 255, 0.08),
+      transparent 28%
+    ),
+    #030308;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.contact-navbar {
+  position: relative;
+
+  width: 100%;
+  height: 86px;
+
+  padding: 0 60px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  z-index: 10;
+}
+
+
+/* Brand */
+
+.contact-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  white-space: nowrap;
+}
+
+
+/* AG logo */
+
+.brand-ag {
+  font-size: 38px;
+
+  font-weight: 800;
+
+  letter-spacing: -5px;
+
+  line-height: 1;
+
+  color: #ffffff;
+}
+
+.brand-g {
+  margin-left: -2px;
+
+  font-size: 38px;
+
+  font-weight: 800;
+
+  letter-spacing: -5px;
+
+  color: #8f2cff;
+}
+
+
+/* Purple dot */
+
+.brand-dot {
+  width: 6px;
+  height: 6px;
+
+  margin-left: 48px;
+
+  border-radius: 50%;
+
+  background: #a737ff;
+
+  box-shadow:
+    0 0 12px rgba(167, 55, 255, 0.8);
+}
+
+
+/* Section number */
+
+.contact-section-number {
+  margin-left: 12px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+
+/* Slash */
+
+.contact-slash {
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 13px;
+}
+
+
+/* Contact */
+
+.contact-section-name {
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.contact-nav {
+  display: flex;
+
+  align-items: center;
+
+  gap: 42px;
+}
+
+.contact-nav a {
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.contact-nav a:hover {
+  color: #b33cff;
+}
+
+
+/* Collaborate button */
+
+.contact-nav-button {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 10px 17px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.45);
+
+  border-radius: 8px;
+}
+
+.contact-nav-button span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #a735ff;
+
+  box-shadow:
+    0 0 10px rgba(167, 53, 255, 0.8);
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.contact-content {
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+  min-height: calc(100svh - 86px);
+  height: auto;
+
+  padding: 40px 6.5vw;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* =====================================================
+   LEFT CONTENT
+===================================================== */
+
+.contact-left {
+  position: relative;
+
+  width: min(900px, 65vw);
+}
+
+
+/* =====================================================
+   MAIN TITLE
+===================================================== */
+
+.contact-title {
+  display: flex;
+  flex-direction: column;
+
+  font-size: clamp(
+    110px,
+    10vw,
+    180px
+  );
+
+  line-height: 0.84;
+  font-weight: 800;
+  letter-spacing: -7px;
+
+  text-transform: uppercase;
+  font-stretch: condensed;
+}
+
+.contact-title span {
+  display: block;
+}
+
+.contact-title .purple {
+  color: #8f2cff;
+
+  text-shadow:
+    0 0 35px rgba(143, 44, 255, 0.2);
+}
+
+
+/* =====================================================
+   TITLE LINE
+===================================================== */
+
+.contact-title-line {
+  width: 68px;
+  height: 2px;
+
+  margin-top: 28px;
+
+  background: #b83cff;
+
+  box-shadow:
+    0 0 10px rgba(184, 60, 255, 0.5);
+}
+
+
+/* =====================================================
+   EMAIL
+===================================================== */
+
+.contact-email {
+  width: fit-content;
+  max-width: 100%;
+
+  margin-top: 20px;
+  padding-bottom: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  border-bottom: 2px solid #b43cff;
+
+  transition:
+    color 0.25s ease,
+    gap 0.25s ease;
+}
+
+.contact-email:hover {
+  color: #c44cff;
+
+  gap: 32px;
+}
+
+.contact-email > span:first-child {
+  font-size: clamp(
+    32px,
+    3.1vw,
+    53px
+  );
+
+  font-weight: 400;
+
+  letter-spacing: -1px;
+
+  white-space: nowrap;
+}
+
+.contact-email-arrow {
+  color: #a936ff;
+
+  font-size: 48px;
+
+  line-height: 1;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.contact-description {
+  margin: 15px 0 0;
+
+  font-size: 17px;
+  line-height: 1.5;
+
+  color: rgba(255, 255, 255, 0.62);
+}
+
+/* =====================================================
+   RIGHT SIDE GLOW
+===================================================== */
+
+.contact-glow {
+  position: absolute;
+
+  width: 900px;
+  height: 900px;
+
+  right: -230px;
+  top: 270px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(137, 24, 255, 0.58) 0%,
+      rgba(104, 20, 190, 0.28) 18%,
+      rgba(72, 15, 130, 0.12) 35%,
+      transparent 67%
+    );
+
+  filter: blur(5px);
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* =====================================================
+   CONCENTRIC RINGS
+===================================================== */
+
+.contact-ring {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(157, 68, 255, 0.13);
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+}
+
+.ring-1 {
+  width: 280px;
+  height: 280px;
+}
+
+.ring-2 {
+  width: 390px;
+  height: 390px;
+}
+
+.ring-3 {
+  width: 500px;
+  height: 500px;
+}
+
+.ring-4 {
+  width: 610px;
+  height: 610px;
+}
+
+.ring-5 {
+  width: 720px;
+  height: 720px;
+}
+
+/* =========================================================
+   RESPONSIVE — CONTACT PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   LARGE LAPTOP / SMALL DESKTOP
+   1200px – 1400px
+   ========================================================= */
+
+@media (max-width: 1400px) {
+
+  .contact-content {
+    min-height: calc(100svh - 86px);
+    padding: 55px 6vw 60px;
+  }
+
+  .contact-left {
+    width: min(850px, 68vw);
+  }
+
+  .contact-title {
+    font-size: clamp(105px, 9.5vw, 155px);
+  }
+
+  .contact-title-line {
+    margin-top: 28px;
+  }
+
+  .contact-email {
+    margin-top: 20px;
+  }
+
+  .contact-email > span:first-child {
+    font-size: clamp(30px, 3vw, 48px);
+  }
+
+  .contact-description {
+    margin-top: 15px;
+    font-size: 16px;
+  }
+
+  .contact-glow {
+    width: 800px;
+    height: 800px;
+    right: -260px;
+    top: 180px;
+  }
+}
+
+
+/* =========================================================
+   TABLET LANDSCAPE / IPAD
+   901px – 1199px
+   ========================================================= */
+
+@media (min-width: 901px) and (max-width: 1199px) {
+
+  .contact-page {
+    min-height: 100svh;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .contact-navbar {
+    height: 78px;
+    padding: 0 35px;
+  }
+
+  .contact-nav {
+    gap: 28px;
+  }
+
+  .contact-nav a {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .contact-nav-button {
+    padding: 9px 14px;
+  }
+
+  .contact-content {
+    min-height: calc(100svh - 78px);
+    height: auto;
+
+    padding:
+      55px
+      5vw
+      55px;
+  }
+
+  .contact-left {
+    width: min(720px, 78vw);
+  }
+
+  .contact-title {
+    font-size: clamp(
+      82px,
+      11vw,
+      125px
+    );
+
+    line-height: .86;
+    letter-spacing: -5px;
+  }
+
+  .contact-title-line {
+    margin-top: 25px;
+  }
+
+  .contact-email {
+    margin-top: 20px;
+    gap: 18px;
+  }
+
+  .contact-email > span:first-child {
+    font-size: clamp(
+      28px,
+      3.4vw,
+      42px
+    );
+
+    white-space: normal;
+  }
+
+  .contact-email-arrow {
+    font-size: 40px;
+  }
+
+  .contact-description {
+    max-width: 600px;
+
+    margin-top: 15px;
+
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .contact-glow {
+    width: 650px;
+    height: 650px;
+
+    right: -260px;
+    top: 220px;
+  }
+}
+
+
+/* =========================================================
+   TABLET PORTRAIT
+   768px – 900px
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 900px) {
+
+  .contact-page {
+    min-height: 100svh;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .contact-navbar {
+    height: 75px;
+    padding: 0 30px;
+  }
+
+  .contact-nav {
+    display: none;
+  }
+
+  .contact-content {
+    min-height: calc(100svh - 75px);
+    height: auto;
+
+    padding:
+      55px
+      35px
+      50px;
+  }
+
+  .contact-left {
+    width: 100%;
+    max-width: 680px;
+  }
+
+  .contact-title {
+    font-size: clamp(
+      78px,
+      13vw,
+      115px
+    );
+
+    line-height: .86;
+    letter-spacing: -5px;
+  }
+
+  .contact-title-line {
+    margin-top: 24px;
+  }
+
+  .contact-email {
+    margin-top: 19px;
+    gap: 16px;
+  }
+
+  .contact-email > span:first-child {
+    font-size: clamp(
+      27px,
+      4vw,
+      40px
+    );
+
+    white-space: normal;
+  }
+
+  .contact-email-arrow {
+    font-size: 38px;
+  }
+
+  .contact-description {
+    max-width: 620px;
+
+    margin-top: 14px;
+
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .contact-glow {
+    width: 600px;
+    height: 600px;
+
+    right: -300px;
+    top: 250px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE LANDSCAPE / LARGE PHONE
+   601px – 767px
+   ========================================================= */
+
+@media (min-width: 601px) and (max-width: 767px) {
+
+  .contact-page {
+    min-height: 100svh;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .contact-navbar {
+    height: 72px;
+    padding: 0 25px;
+  }
+
+  .contact-nav {
+    display: none;
+  }
+
+  .contact-content {
+    min-height: calc(100svh - 72px);
+    height: auto;
+
+    padding:
+      48px
+      28px
+      45px;
+  }
+
+  .contact-left {
+    width: 100%;
+  }
+
+  .contact-title {
+    font-size: clamp(
+      68px,
+      15vw,
+      105px
+    );
+
+    line-height: .86;
+    letter-spacing: -4px;
+  }
+
+  .contact-title-line {
+    margin-top: 23px;
+  }
+
+  .contact-email {
+    margin-top: 18px;
+    gap: 12px;
+  }
+
+  .contact-email > span:first-child {
+    font-size: clamp(
+      24px,
+      5vw,
+      34px
+    );
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-email-arrow {
+    font-size: 34px;
+  }
+
+  .contact-description {
+    margin-top: 14px;
+
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .contact-glow {
+    width: 520px;
+    height: 520px;
+
+    right: -290px;
+    top: 300px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   401px – 600px
+   ========================================================= */
+
+@media (min-width: 401px) and (max-width: 600px) {
+
+  .contact-page {
+    min-height: 100svh;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .contact-navbar {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .contact-nav {
+    display: none;
+  }
+
+  .brand-ag,
+  .brand-g {
+    font-size: 32px;
+  }
+
+  .brand-dot {
+    margin-left: 25px;
+  }
+
+  .contact-section-number,
+  .contact-slash,
+  .contact-section-name {
+    display: none;
+  }
+
+  .contact-content {
+    min-height: calc(100svh - 70px);
+    height: auto;
+
+    padding:
+      45px
+      22px
+      40px;
+  }
+
+  .contact-left {
+    width: 100%;
+  }
+
+  .contact-title {
+    font-size: 21vw;
+
+    line-height: .87;
+    letter-spacing: -3px;
+  }
+
+  .contact-title-line {
+    width: 58px;
+    margin-top: 22px;
+  }
+
+  .contact-email {
+    margin-top: 18px;
+    gap: 10px;
+  }
+
+  .contact-email > span:first-child {
+    font-size: 23px;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-email-arrow {
+    font-size: 31px;
+  }
+
+  .contact-description {
+    margin-top: 14px;
+
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .contact-glow {
+    width: 470px;
+    height: 470px;
+
+    right: -280px;
+    top: 280px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   400px AND BELOW
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .contact-page {
+    min-height: 100svh;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .contact-navbar {
+    height: 66px;
+    padding: 0 18px;
+  }
+
+  .contact-nav {
+    display: none;
+  }
+
+  .brand-ag,
+  .brand-g {
+    font-size: 30px;
+  }
+
+  .brand-dot {
+    margin-left: 20px;
+  }
+
+  .contact-section-number,
+  .contact-slash,
+  .contact-section-name {
+    display: none;
+  }
+
+  .contact-content {
+    min-height: calc(100svh - 66px);
+    height: auto;
+
+    padding:
+      42px
+      18px
+      35px;
+  }
+
+  .contact-left {
+    width: 100%;
+  }
+
+  .contact-title {
+    font-size: 22vw;
+
+    line-height: .88;
+    letter-spacing: -3px;
+  }
+
+  .contact-title-line {
+    width: 52px;
+    margin-top: 20px;
+  }
+
+  .contact-email {
+    margin-top: 16px;
+    gap: 8px;
+  }
+
+  .contact-email > span:first-child {
+    font-size: 21px;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-email-arrow {
+    font-size: 28px;
+  }
+
+  .contact-description {
+    margin-top: 13px;
+
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .contact-glow {
+    width: 420px;
+    height: 420px;
+
+    right: -260px;
+    top: 260px;
+  }
+}

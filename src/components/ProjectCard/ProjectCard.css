@@ -1,0 +1,76 @@
+.project-card {
+  width: 100%;
+}
+
+.project-card-image {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  border-radius: var(--radius-medium, 16px);
+
+  background: var(--color-surface, #0b0c14);
+}
+
+.project-card-placeholder {
+  width: 100%;
+  height: 100%;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(139, 25, 255, 0.12),
+      transparent 55%
+    ),
+    #0b0c14;
+}
+
+.project-card-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.project-card-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-top: 18px;
+}
+
+.project-card-category {
+  margin-bottom: 6px;
+
+  color: var(--color-accent, #8b19ff);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+}
+
+.project-card-title {
+  color: var(--color-text, #ffffff);
+
+  font-size: clamp(20px, 2vw, 30px);
+  font-weight: 600;
+
+  letter-spacing: -0.03em;
+}
+
+.project-card-year {
+  color: var(--color-text-muted, #8f8f9d);
+
+  font-size: 13px;
+
+  white-space: nowrap;
+}

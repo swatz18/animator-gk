@@ -1,0 +1,45 @@
+:root {
+  /* ================================
+     COLORS
+     ================================= */
+
+  --color-bg: #050507;
+  --color-surface: #0b0b10;
+
+  --color-text: #ffffff;
+  --color-text-muted: #a5a5ad;
+
+  --color-primary: #8b00ff;
+  --color-primary-bright: #b000ff;
+
+  --gradient-primary:
+    linear-gradient(135deg, #6a00ff, #b000ff);
+
+  /* ================================
+     LAYOUT
+     ================================= */
+
+  --container-width: 1400px;
+  --page-padding: 5vw;
+
+  /* ================================
+     BORDERS
+     ================================= */
+
+  --border-color: rgba(255, 255, 255, 0.12);
+  --border-primary: rgba(139, 0, 255, 0.5);
+
+  /* ================================
+     TYPOGRAPHY
+     ================================= */
+
+  --font-primary: "Inter", sans-serif;
+
+  /* ================================
+     MOTION
+     ================================= */
+
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 0.25s ease;
+  --transition-normal: 0.5s var(--ease-smooth);
+}

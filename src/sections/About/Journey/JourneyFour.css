@@ -1,0 +1,737 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
+   JOURNEY FOUR
+========================================================= */
+
+.journey-four {
+  position: relative;
+  width: 100%;
+  min-height: 765px;
+
+  overflow: hidden;
+
+  background: #030305;
+  color: #ffffff;
+}
+
+
+.journey-four-container {
+  position: relative;
+
+  width: 100%;
+  max-width: 1600px;
+  min-height: 765px;
+
+  margin: 0 auto;
+}
+
+
+.journey-four-content {
+  position: relative;
+  z-index: 3;
+
+  width: 58%;
+  min-height: 765px;
+
+  padding-left: clamp(60px, 8.1vw, 130px);
+  padding-top: 72px;
+}
+
+
+/* LABEL */
+
+.journey-four-label {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+
+  color: #eeeeee;
+}
+
+
+.journey-four-label-dot {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #8b20ff;
+
+  box-shadow:
+    0 0 8px rgba(139, 32, 255, 0.9),
+    0 0 18px rgba(139, 32, 255, 0.5);
+}
+
+
+/* TITLE */
+
+.journey-four-title-row {
+  display: flex;
+  align-items: flex-start;
+
+  margin-top: 42px;
+}
+
+
+.journey-four-number {
+  flex-shrink: 0;
+
+  width: 145px;
+  margin-right: 8px;
+
+  font-family: "Bebas Neue", sans-serif;
+
+  font-size: 138px;
+  font-weight: 400;
+
+  line-height: 0.8;
+  letter-spacing: 1px;
+
+  color: transparent;
+
+  -webkit-text-stroke: 2px #7b16ff;
+
+  text-shadow:
+    0 0 6px rgba(123, 22, 255, 0.2);
+}
+
+
+.journey-four-title-row h2 {
+  margin: -4px 0 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: clamp(45px, 3.25vw, 56px);
+  font-weight: 900;
+
+  line-height: 0.99;
+  letter-spacing: -2.2px;
+
+  color: #ffffff;
+}
+
+
+.journey-four-title-row h2 span {
+  color: #871cff;
+
+  text-shadow:
+    0 0 18px rgba(135, 28, 255, 0.15);
+}
+
+
+/* LINE */
+
+.journey-four-line {
+  width: 61px;
+  height: 3px;
+
+  margin-top: 34px;
+  margin-left: 179px;
+
+  background: #861cff;
+
+  box-shadow:
+    0 0 10px rgba(134, 28, 255, 0.35);
+}
+
+
+/* ROLE */
+
+.journey-four-role {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  margin-top: 35px;
+  margin-left: 179px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+
+  line-height: 1.9;
+  letter-spacing: 0;
+
+  color: #a9a9b1;
+}
+
+.journey-four-arrow {
+  font-size: 28px;
+  line-height: 1;
+
+  color: #8a20ff;
+}
+
+/* DESCRIPTION */
+
+.journey-four-description {
+  margin: 40px 0 0 179px;
+
+  max-width: 500px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+
+  line-height: 1.9;
+
+  color: #a9a9b1;
+}
+
+
+/* DATE CARD */
+
+.journey-four-date-card {
+  display: flex;
+  align-items: center;
+
+  width: 190px;
+  min-height: 70px;
+
+  margin-top: 45px;
+  margin-left: 179px;
+
+  padding: 10px 14px;
+
+  border: 1px solid rgba(132, 27, 255, 0.65);
+  border-radius: 7px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(45, 10, 78, 0.28),
+      rgba(12, 5, 20, 0.3)
+    );
+
+  box-shadow:
+    inset 0 0 25px rgba(121, 22, 255, 0.04);
+}
+
+
+/* CALENDAR */
+
+.journey-four-calendar {
+  width: 32px;
+  height: 32px;
+
+  margin-right: 12px;
+
+  color: #8b20ff;
+}
+
+
+.journey-four-calendar svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* DATE TEXT */
+
+.journey-four-date-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+
+.journey-four-date-text strong {
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  color: #861cff;
+}
+
+
+.journey-four-date-text span {
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  color: #d7d7db;
+}
+
+
+/* IMAGE */
+
+.journey-four-image {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 57%;
+  height: 100%;
+
+  overflow: hidden;
+
+  z-index: 1;
+}
+
+
+.journey-four-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* GRADIENT */
+
+.journey-four-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #030305 0%,
+      rgba(3, 3, 5, 0.96) 5%,
+      rgba(3, 3, 5, 0.82) 16%,
+      rgba(3, 3, 5, 0.42) 34%,
+      rgba(3, 3, 5, 0.08) 58%,
+      rgba(3, 3, 5, 0) 78%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(3, 3, 5, 0.15) 0%,
+      rgba(3, 3, 5, 0) 35%,
+      rgba(3, 3, 5, 0.35) 100%
+    );
+}
+
+
+/* =========================================================
+   iPAD PRO
+========================================================= */
+
+@media (min-width: 901px) and (max-width: 1100px) {
+
+  .journey-four {
+    min-height: auto;
+  }
+
+  .journey-four-container {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .journey-four-content {
+    width: 100%;
+    min-height: auto;
+
+    padding: 65px 70px 70px;
+  }
+
+  .journey-four-title-row {
+    margin-top: 40px;
+  }
+
+  .journey-four-number {
+    width: 150px;
+    font-size: 145px;
+  }
+
+  .journey-four-title-row h2 {
+    font-size: 52px;
+    line-height: 0.98;
+  }
+
+  .journey-four-line {
+    margin-left: 185px;
+    margin-top: 35px;
+  }
+
+  .journey-four-role {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 13px;
+
+  margin-left: 185px;
+  margin-top: 34px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+
+  line-height: 1.9;
+  letter-spacing: 0;
+
+  color: #a9a9b1;
+
+  white-space: normal;
+}
+
+.journey-four-arrow {
+  flex-shrink: 0;
+
+  font-size: 28px;
+  line-height: 1;
+
+  color: #8a20ff;
+}
+
+  .journey-four-description {
+    margin-left: 185px;
+    margin-top: 38px;
+
+    max-width: 560px;
+
+    font-size: 17px;
+    line-height: 1.85;
+  }
+
+  .journey-four-date-card {
+    margin-left: 185px;
+    margin-top: 42px;
+  }
+
+  .journey-four-image {
+    position: relative;
+
+    top: auto;
+    right: auto;
+
+    width: 100%;
+    height: 520px;
+
+    order: 2;
+  }
+
+  .journey-four-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .journey-four-image-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        #030305 0%,
+        rgba(3, 3, 5, 0.05) 22%,
+        rgba(3, 3, 5, 0) 45%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(3, 3, 5, 0) 65%,
+        rgba(3, 3, 5, 0.55) 100%
+      );
+  }
+}
+
+
+/* =========================================================
+   iPAD MINI
+========================================================= */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+  .journey-four {
+    min-height: auto;
+  }
+
+  .journey-four-container {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .journey-four-content {
+    width: 100%;
+    min-height: auto;
+
+    padding: 55px 45px 60px;
+  }
+
+  .journey-four-label {
+    font-size: 14px;
+    gap: 14px;
+  }
+
+  .journey-four-label-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .journey-four-title-row {
+    margin-top: 38px;
+  }
+
+  .journey-four-number {
+    width: 125px;
+    font-size: 120px;
+  }
+
+  .journey-four-title-row h2 {
+    font-size: 43px;
+    line-height: 0.98;
+    letter-spacing: -1.8px;
+  }
+
+  .journey-four-line {
+    margin-left: 155px;
+    margin-top: 31px;
+  }
+
+  .journey-four-role {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-left: 155px;
+  margin-top: 31px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+
+  line-height: 1.8;
+  letter-spacing: 0;
+
+  color: #a9a9b1;
+
+  white-space: normal;
+}
+
+.journey-four-arrow {
+  flex-shrink: 0;
+
+  font-size: 26px;
+  line-height: 1;
+
+  color: #8a20ff;
+}
+
+  .journey-four-description {
+    margin-left: 155px;
+    margin-top: 34px;
+
+    max-width: 390px;
+
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .journey-four-date-card {
+    margin-left: 155px;
+    margin-top: 38px;
+  }
+
+  .journey-four-image {
+    position: relative;
+
+    top: auto;
+    right: auto;
+
+    width: 100%;
+    height: 430px;
+
+    order: 2;
+  }
+
+  .journey-four-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .journey-four-image-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        #030305 0%,
+        rgba(3, 3, 5, 0.05) 22%,
+        rgba(3, 3, 5, 0) 45%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(3, 3, 5, 0) 65%,
+        rgba(3, 3, 5, 0.55) 100%
+      );
+  }
+}
+
+/* =========================================================
+   MOBILE — JOURNEY FOUR
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .journey-four-content {
+    width: 100%;
+    min-height: auto;
+
+    padding: 45px 24px 55px;
+    box-sizing: border-box;
+  }
+
+
+  /* TITLE */
+
+  .journey-four-title-row {
+    display: block;
+    margin-top: 30px;
+  }
+
+  .journey-four-number {
+    width: auto;
+
+    margin: 0 0 22px;
+
+    font-size: clamp(82px, 24vw, 90px);
+    line-height: 0.8;
+  }
+
+  .journey-four-title-row h2 {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+
+    font-size: clamp(30px, 9.5vw, 38px);
+    line-height: 1.04;
+    letter-spacing: -1px;
+
+    overflow-wrap: break-word;
+  }
+  .journey-two-arrow {
+    flex-shrink: 0;
+
+    font-size: 28px;
+  }
+
+  /* PURPLE LINE */
+
+  .journey-four-line {
+    margin-left: 0;
+    margin-top: 27px;
+  }
+
+
+  /* ROLE */
+
+  .journey-four-role {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  width: 100%;
+  max-width: 100%;
+
+  gap: 8px;
+
+  margin-left: 0;
+  margin-top: 27px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+
+  line-height: 1.75;
+  letter-spacing: 0;
+
+  color: #a9a9b1;
+
+  white-space: normal;
+
+  box-sizing: border-box;
+}
+
+.journey-four-arrow {
+  flex-shrink: 0;
+
+  font-size: 26px;
+  line-height: 1;
+
+  color: #8a20ff;
+}
+
+
+
+
+  /* DESCRIPTION */
+
+  .journey-four-description {
+    width: 100%;
+    max-width: 100%;
+
+    margin-left: 0;
+    margin-top: 30px;
+
+    font-size: 15px;
+    line-height: 1.75;
+
+    box-sizing: border-box;
+  }
+
+
+  /* DATE CARD */
+
+  .journey-four-date-card {
+    width: 180px;
+    min-height: 68px;
+
+    margin-left: 0;
+    margin-top: 35px;
+
+    box-sizing: border-box;
+  }
+
+
+  /* IMAGE */
+
+  .journey-four-image {
+    position: relative;
+
+    width: 100%;
+    height: 300px;
+
+    order: 2;
+  }
+
+  .journey-four-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .journey-four-image-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        #030305 0%,
+        rgba(3, 3, 5, 0) 25%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(3, 3, 5, 0) 55%,
+        rgba(3, 3, 5, 0.65) 100%
+      );
+  }
+}

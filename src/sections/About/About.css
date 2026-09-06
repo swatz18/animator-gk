@@ -1,0 +1,887 @@
+/* =========================================================
+   ABOUT PAGE
+========================================================= */
+
+.about-page {
+  width: 100%;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  overflow-x: hidden;
+  overflow-y: visible;
+
+  background: #020207;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   ABOUT HERO
+========================================================= */
+
+.about-hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 48% 52%;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 75% 50%,
+      rgba(105, 20, 255, 0.12),
+      transparent 35%
+    ),
+    #020207;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.about-content {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  padding:
+    100px
+    clamp(45px, 5vw, 80px)
+    60px;
+}
+
+.about-label {
+  margin-bottom: 14px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  color: #9b2cff;
+}
+
+.about-label-line {
+  width: 55px;
+  height: 2px;
+
+  margin-bottom: 30px;
+
+  background: #8b19ff;
+
+  box-shadow:
+    0 0 12px rgba(139, 25, 255, 0.6);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.about-title {
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: clamp(120px, 5.2vw, 88px);
+
+  font-weight: 800;
+
+  line-height: 0.87;
+
+  letter-spacing: -0.035em;
+}
+
+.about-title span {
+  display: block;
+}
+
+.about-title strong {
+  color: #8b19ff;
+
+  text-shadow:
+    0 0 25px rgba(139, 25, 255, 0.3);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.about-description {
+  max-width: 620px;
+
+  margin: 32px 0 0;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 19px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.78);
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.about-stats {
+  display: flex;
+  align-items: center;
+
+  margin-top: 48px;
+
+  gap: 28px;
+}
+
+.about-stat {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+.about-stat strong {
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: 58px;
+
+  line-height: 1;
+
+  color: #8b19ff;
+
+  text-shadow:
+    0 0 25px rgba(139, 25, 255, 0.3);
+}
+
+
+.about-stat span {
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  line-height: 1.35;
+
+  letter-spacing: 0.08em;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.about-stat-divider {
+  width: 1px;
+  height: 45px;
+
+  background:
+    rgba(139, 25, 255, 0.55);
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.about-visual {
+  position: relative;
+
+  min-width: 0;
+
+  height: 100%;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(139, 25, 255, 0.14),
+      transparent 48%
+    );
+}
+
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.about-glow {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: min(40vw, 560px);
+  height: min(40vw, 560px);
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(139, 25, 255, 0.22),
+      transparent 68%
+    );
+
+  filter: blur(15px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   RINGS
+========================================================= */
+
+.about-rings {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: min(40vw, 600px);
+  aspect-ratio: 1;
+
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+}
+
+.about-rings span {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  border:
+    1px solid
+    rgba(139, 25, 255, 0.25);
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.about-rings span:nth-child(1) {
+  width: 100%;
+  height: 100%;
+}
+
+.about-rings span:nth-child(2) {
+  width: 82%;
+  height: 82%;
+}
+
+.about-rings span:nth-child(3) {
+  width: 64%;
+  height: 64%;
+}
+
+.about-rings span:nth-child(4) {
+  width: 46%;
+  height: 46%;
+}
+
+.about-rings span:nth-child(5) {
+  width: 28%;
+  height: 28%;
+}
+
+
+/* =========================================================
+   PORTRAIT
+========================================================= */
+
+.about-portrait {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: min(42vw, 620px);
+  max-width: none;
+
+  transform: translateX(-50%);
+
+  display: block;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 0 30px
+      rgba(139, 25, 255, 0.16)
+    );
+}
+
+
+/* =========================================================
+   SMALL DESKTOP
+   1200px – 1399px
+========================================================= */
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+
+  .about-content {
+    padding:
+      90px
+      45px
+      50px;
+  }
+
+  .about-title {
+    font-size: clamp(55px, 6vw, 76px);
+  }
+
+  .about-description {
+    max-width: 440px;
+
+    font-size: 15px;
+  }
+
+  .about-stats {
+    margin-top: 38px;
+  }
+
+  .about-stat strong {
+    font-size: 48px;
+  }
+
+  .about-portrait {
+    width: 48vw;
+  }
+
+  .about-rings {
+    width: 48vw;
+  }
+}
+
+/* =========================================================
+   TABLET — iPAD MINI / AIR
+   601px – 900px
+========================================================= */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+  .about-hero {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 0;
+
+    overflow: visible;
+  }
+
+
+  /* =========================
+     CONTENT
+  ========================= */
+
+  .about-content {
+    min-height: 0;
+
+    padding:
+      90px
+      8vw
+      55px;
+
+    justify-content: flex-start;
+  }
+
+  .about-label {
+    font-size: 12px;
+  }
+
+  .about-label-line {
+    width: 45px;
+
+    margin-bottom: 26px;
+  }
+
+  .about-title {
+    font-size: clamp(56px, 9vw, 76px);
+
+    line-height: 0.88;
+  }
+
+  .about-description {
+    max-width: 560px;
+
+    margin-top: 28px;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+  }
+
+
+  /* =========================
+     STATS
+  ========================= */
+
+  .about-stats {
+    margin-top: 38px;
+
+    gap: 24px;
+  }
+
+  .about-stat {
+    gap: 11px;
+  }
+
+  .about-stat strong {
+    font-size: 48px;
+  }
+
+  .about-stat span {
+    font-size: 10px;
+  }
+
+  .about-stat-divider {
+    height: 40px;
+  }
+
+
+  /* =========================
+     VISUAL
+  ========================= */
+
+  .about-visual {
+    width: 100%;
+
+    height: 600px;
+
+    min-height: 0;
+  }
+
+  .about-rings {
+    width: min(72vw, 560px);
+  }
+
+  .about-glow {
+    width: min(65vw, 500px);
+    height: min(65vw, 500px);
+  }
+
+  .about-portrait {
+    width: min(72vw, 600px);
+
+    max-width: 600px;
+  }
+}
+
+/* =========================================================
+   TABLET — iPAD PRO
+   901px – 1199px
+========================================================= */
+
+@media (min-width: 901px) and (max-width: 1199px) {
+
+  /* =========================
+     HERO
+  ========================= */
+
+  .about-hero {
+  display: grid;
+
+  grid-template-columns: 48% 52%;
+
+  width: 100%;
+
+  height: 680px;
+  min-height: 680px;
+
+  overflow: hidden;
+}
+
+
+  /* =========================
+     CONTENT
+  ========================= */
+
+  .about-content {
+    position: relative;
+
+    width: 100%;
+    min-width: 0;
+
+    padding:
+      180px
+      5vw
+      60px;
+
+    box-sizing: border-box;
+
+    justify-content: flex-start;
+  }
+
+
+  /* =========================
+     LABEL
+  ========================= */
+
+  .about-label {
+    font-size: 12px;
+
+    margin-bottom: 12px;
+  }
+
+  .about-label-line {
+    width: 48px;
+
+    margin-bottom: 25px;
+  }
+
+
+  /* =========================
+     TITLE
+  ========================= */
+
+  .about-title {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: clamp(58px, 6vw, 72px);
+
+    line-height: 0.88;
+
+    letter-spacing: -0.035em;
+  }
+
+
+  /* =========================
+     DESCRIPTION
+  ========================= */
+
+  .about-description {
+    width: 100%;
+    max-width: 430px;
+
+    margin-top: 28px;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+  }
+
+
+  /* =========================
+     STATS
+  ========================= */
+
+  .about-stats {
+    display: flex;
+    align-items: center;
+
+    margin-top: 36px;
+
+    gap: 22px;
+  }
+
+  .about-stat {
+    gap: 10px;
+  }
+
+  .about-stat strong {
+    font-size: 48px;
+  }
+
+  .about-stat span {
+    font-size: 9px;
+  }
+
+  .about-stat-divider {
+    width: 1px;
+    height: 40px;
+  }
+
+
+  /* =========================
+     VISUAL
+  ========================= */
+
+  .about-visual {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+
+  align-self: stretch;
+}
+
+
+  /* =========================
+     RINGS
+  ========================= */
+
+  .about-rings {
+    width: min(48vw, 500px);
+
+    left: 50%;
+    top: 50%;
+  }
+
+
+  /* =========================
+     GLOW
+  ========================= */
+
+  .about-glow {
+    width: min(44vw, 480px);
+    height: min(44vw, 480px);
+
+    left: 50%;
+    top: 50%;
+  }
+
+
+  /* =========================
+     PORTRAIT
+  ========================= */
+
+  .about-portrait {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: min(50vw, 560px);
+  max-width: 560px;
+
+  transform: translate(-50%, -50%);
+
+  display: block;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 0 30px
+      rgba(139, 25, 255, 0.16)
+    );
+}
+}
+
+/* =========================================================
+   SMALL TABLET
+   601px – 768px
+========================================================= */
+
+@media (min-width: 601px) and (max-width: 768px) {
+
+  .about-content {
+    min-height: 560px;
+
+    padding:
+      80px
+      7vw
+      50px;
+  }
+
+  .about-title {
+    font-size: clamp(54px, 9vw, 70px);
+  }
+
+  .about-description {
+    max-width: 560px;
+
+    font-size: 15px;
+  }
+
+  .about-stats {
+    margin-top: 35px;
+  }
+
+  .about-stat strong {
+    font-size: 46px;
+  }
+
+  .about-visual {
+    height: 560px;
+  }
+
+  .about-rings {
+    width: 72vw;
+  }
+
+  .about-portrait {
+    width: 72vw;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ≤600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .about-hero {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 0;
+
+    overflow: visible;
+  }
+
+  .about-content {
+    min-height: 0;
+
+    padding:
+      70px
+      20px
+      40px;
+
+    justify-content: flex-start;
+  }
+
+  .about-label {
+    font-size: 12px;
+  }
+
+  .about-label-line {
+    width: 42px;
+
+    margin-bottom: 24px;
+  }
+
+  .about-title {
+    font-size: clamp(48px, 13vw, 64px);
+
+    line-height: 0.9;
+  }
+
+  .about-description {
+    max-width: 100%;
+
+    margin-top: 25px;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+  }
+
+  .about-stats {
+    margin-top: 32px;
+
+    gap: 18px;
+  }
+
+  .about-stat {
+    gap: 9px;
+  }
+
+  .about-stat strong {
+    font-size: 42px;
+  }
+
+  .about-stat span {
+    font-size: 8px;
+  }
+
+  .about-stat-divider {
+    height: 38px;
+  }
+
+  .about-visual {
+    width: 100%;
+
+    height: 500px;
+
+    min-height: 0;
+  }
+
+  .about-rings {
+    width: 92vw;
+  }
+
+  .about-glow {
+    width: 90vw;
+    height: 90vw;
+  }
+
+  .about-portrait {
+    width: 95vw;
+
+    max-width: 560px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ≤400px
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .about-content {
+    padding:
+      58px
+      18px
+      34px;
+  }
+
+  .about-title {
+    font-size: clamp(44px, 12.5vw, 57px);
+  }
+
+  .about-description {
+    font-size: 13px;
+  }
+
+  .about-stats {
+    gap: 14px;
+  }
+
+  .about-stat strong {
+    font-size: 38px;
+  }
+
+  .about-stat span {
+    font-size: 7px;
+  }
+
+  .about-visual {
+    height: 430px;
+  }
+
+  .about-rings {
+    width: 94vw;
+  }
+
+  .about-portrait {
+    width: 100vw;
+  }
+}
