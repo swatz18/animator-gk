@@ -694,12 +694,9 @@
     margin-top: 18px;
   }
 }
-
-
 /* =========================================================
    MOBILE
    ≤599px
-   1 CARD
 ========================================================= */
 
 @media (max-width: 599px) {
@@ -717,7 +714,9 @@
   }
 
 
-  /* HEADER */
+  /* =======================================================
+     HEADER
+  ======================================================= */
 
   .what-i-do__header {
     margin-bottom: 0;
@@ -737,7 +736,11 @@
   .what-i-do__title-row h2 {
     margin-bottom: 9px;
 
-    font-size: clamp(42px, 12vw, 52px);
+    font-size: clamp(
+      42px,
+      12vw,
+      52px
+    );
 
     line-height: 0.95;
 
@@ -759,95 +762,215 @@
   }
 
 
-  /* CAROUSEL */
+  /* =======================================================
+     HIDE DESKTOP CAROUSEL
+  ======================================================= */
 
   .what-i-do__carousel {
+    display: none;
+  }
+
+
+  /* =======================================================
+     MOBILE VIEWPORT
+  ======================================================= */
+
+  .what-i-do__mobile-carousel {
+
+    position: relative;
+
     width: 100%;
 
     height: 440px;
 
     margin-top: 26px;
 
-    flex: none;
+    overflow: hidden;
+
+    touch-action: pan-y;
+
+    user-select: none;
+
+    -webkit-user-select: none;
+
+    -webkit-touch-callout: none;
   }
 
 
-  .what-i-do__cards {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  gap: 0;
-  touch-action: pan-y;
-  overflow: hidden;
-}
+  /* =======================================================
+     MOBILE TRACK
 
-.what-i-do__card {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 1;
-}
+     3 copies × 6 cards = 18 cards
 
-.what-i-do__card.is-active {
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 2;
-}
+     The track is 1800% wide.
 
-  /* Disable hover expansion on touch */
+     Every card is 1/18 of the track,
+     which makes each card exactly
+     the width of the viewport.
+  ======================================================= */
 
-  .what-i-do__card:hover {
-    flex: 1;
+  .what-i-do__mobile-track {
+
+    display: flex;
+
+    width: 1800%;
+
+    height: 100%;
+
+    flex-shrink: 0;
+
+    will-change: transform;
+
+    transform-origin: left center;
+  }
+
+
+  /* =======================================================
+     MOBILE CARD
+
+     ONE CARD = ONE VIEWPORT WIDTH
+  ======================================================= */
+
+  .what-i-do__mobile-card {
+
+    position: relative;
+
+    flex: 0 0 5.5555556%;
+
+    width: 5.5555556%;
+
+    height: 100%;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    /*
+      PURPLE CARD GLOW
+    */
+
+    border: 1px solid #b941ff;
+
+    box-shadow:
+      0 0 0 1px
+        rgba(185, 65, 255, 0.35),
+
+      0 8px 25px
+        rgba(185, 65, 255, 0.22),
+
+      0 18px 45px
+        rgba(185, 65, 255, 0.18);
+  }
+
+
+  /* =======================================================
+     IMAGE
+  ======================================================= */
+
+  .what-i-do__mobile-card
+  .what-i-do__image {
+
+    width: 100%;
+
+    height: 100%;
+  }
+
+
+  .what-i-do__mobile-card
+  .what-i-do__image img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transform: none;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+  }
+
+
+  /* =======================================================
+     DISABLE DESKTOP HOVER
+  ======================================================= */
+
+  .what-i-do__mobile-card:hover {
+
+    flex: 0 0 5.5555556%;
+
+    width: 5.5555556%;
 
     transform: none;
 
     border-color: #b941ff;
 
     box-shadow:
-      0 0 0 1px rgba(185, 65, 255, 0.35),
-      0 8px 25px rgba(185, 65, 255, 0.22),
-      0 18px 45px rgba(185, 65, 255, 0.18);
+      0 0 0 1px
+        rgba(185, 65, 255, 0.35),
+
+      0 8px 25px
+        rgba(185, 65, 255, 0.22),
+
+      0 18px 45px
+        rgba(185, 65, 255, 0.18);
   }
 
 
-  .what-i-do__card:hover .what-i-do__image img {
+  .what-i-do__mobile-card:hover
+  .what-i-do__image img {
+
     transform: none;
   }
 
 
-  /* CONTENT */
+  /* =======================================================
+     CONTENT
+  ======================================================= */
 
+  .what-i-do__mobile-card
   .what-i-do__content {
+
+    position: absolute;
+
     left: 20px;
+
     right: 18px;
+
     bottom: 20px;
   }
 
 
+  .what-i-do__mobile-card
   .what-i-do__content h3 {
+
     max-width: 280px;
 
     margin-bottom: 9px;
 
-    font-size: clamp(24px, 7vw, 32px);
+    font-size: clamp(
+      24px,
+      7vw,
+      32px
+    );
 
     line-height: 1.03;
   }
 
 
-  .what-i-do__card:first-child .what-i-do__content h3,
-  .what-i-do__card:last-child .what-i-do__content h3 {
-    max-width: 250px;
-  }
-
-
+  .what-i-do__mobile-card
   .what-i-do__content p {
+
     max-width: 330px;
 
     font-size: 14px;
@@ -856,23 +979,30 @@
   }
 
 
+  .what-i-do__mobile-card
   .what-i-do__card-arrow {
+
     margin-top: 14px;
 
     font-size: 24px;
   }
 
 
-  /* NO ARROWS ON MOBILE */
+  /* =======================================================
+     NO ARROWS ON MOBILE
+  ======================================================= */
 
   .what-i-do__arrow {
     display: none;
   }
 
 
-  /* DOTS */
+  /* =======================================================
+     DOTS
+  ======================================================= */
 
   .what-i-do__dots {
+
     margin-top: 18px;
 
     gap: 10px;
@@ -880,20 +1010,27 @@
 
 
   .what-i-do__dots button {
+
     width: 7px;
+
     height: 7px;
   }
 
 
   .what-i-do__dots button.is-active {
+
     width: 10px;
+
     height: 10px;
   }
 
 
-  /* PROMPT */
+  /* =======================================================
+     PROMPT
+  ======================================================= */
 
   .what-i-do__prompt {
+
     margin-top: 18px;
 
     text-align: center;
@@ -911,41 +1048,62 @@
 @media (max-width: 380px) {
 
   .what-i-do {
+
     padding-left: 18px;
+
     padding-right: 18px;
   }
 
 
   .what-i-do__title-row h2 {
-    font-size: clamp(39px, 11.5vw, 48px);
+
+    font-size: clamp(
+      39px,
+      11.5vw,
+      48px
+    );
   }
 
 
-  .what-i-do__carousel {
+  .what-i-do__mobile-carousel {
+
     height: 410px;
 
     margin-top: 24px;
   }
 
 
+  .what-i-do__mobile-card
   .what-i-do__content {
+
     left: 18px;
+
     right: 16px;
+
     bottom: 18px;
   }
 
 
+  .what-i-do__mobile-card
   .what-i-do__content h3 {
-    font-size: clamp(23px, 7vw, 29px);
+
+    font-size: clamp(
+      23px,
+      7vw,
+      29px
+    );
   }
 
 
+  .what-i-do__mobile-card
   .what-i-do__content p {
+
     font-size: 13px;
   }
 
 
   .what-i-do__dots {
+
     margin-top: 16px;
   }
 }
