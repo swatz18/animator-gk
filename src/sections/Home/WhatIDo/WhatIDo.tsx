@@ -1,12 +1,15 @@
 import "./WhatIDo.css"
 import { whatIDoData } from "./whatIDoData"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
+import type { TouchEvent } from "react"
 
 
 function WhatIDo() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [startIndex, setStartIndex] = useState(0)
   const [cardsToShow, setCardsToShow] = useState(4)
+
+  const touchStartX = useRef<number | null>(null)
 
     useEffect(() => {
       const updateCardsToShow = () => {
@@ -65,6 +68,31 @@ function WhatIDo() {
     current === 0 ? whatIDoData.length - 1 : current - 1
   )
 }
+    const handleTouchStart = (event: TouchEvent<HTMLDivElement>) => {
+      touchStartX.current = event.touches[0].clientX
+    }
+
+    const handleTouchEnd = (event: TouchEvent<HTMLDivElement>) => {
+      if (touchStartX.current === null) return
+
+      const touchEndX = event.changedTouches[0].clientX
+      const swipeDistance = touchStartX.current - touchEndX
+
+      const swipeThreshold = 50
+
+      if (Math.abs(swipeDistance) < swipeThreshold) {
+        touchStartX.current = null
+        return
+      }
+
+      if (swipeDistance > 0) {
+        nextSlide()
+      } else {
+        previousSlide()
+      }
+
+      touchStartX.current = null
+    }
 
   const getCardIndex = (offset: number) => {
   return (
@@ -123,7 +151,11 @@ function WhatIDo() {
         </button>
 
 
-        <div className="what-i-do__cards">
+        <div
+          className="what-i-do__cards"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
 
           {visibleCards.map(({ item, offset }) => {
 
