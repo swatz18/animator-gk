@@ -71,9 +71,10 @@ function WhatIDo() {
   )
 }
       const handleTouchStart = (event: TouchEvent<HTMLElement>) => {
-      touchStartX.current = event.touches[0].clientX
-      setIsSwiping(true)
-    }
+        touchStartX.current = event.touches[0].clientX
+        setIsSwiping(true)
+        setSwipeOffset(0)
+      }
 
     const handleTouchMove = (event: TouchEvent<HTMLElement>) => {
       if (touchStartX.current === null) return
@@ -82,6 +83,10 @@ function WhatIDo() {
       const distance = currentX - touchStartX.current
 
       setSwipeOffset(distance)
+
+      if (Math.abs(distance) > 10 && !isSwiping) {
+        setIsSwiping(true)
+      }
     }
 
     const handleTouchEnd = (event: TouchEvent<HTMLElement>) => {
@@ -89,7 +94,6 @@ function WhatIDo() {
 
       const touchEndX = event.changedTouches[0].clientX
       const swipeDistance = touchEndX - touchStartX.current
-
       const swipeThreshold = 60
       const cardWidth = event.currentTarget.clientWidth
 
@@ -100,8 +104,6 @@ function WhatIDo() {
         return
       }
 
-      setIsSwiping(false)
-
       if (swipeDistance < 0) {
         // Swipe left → next card
         setSwipeOffset(-cardWidth)
@@ -109,6 +111,7 @@ function WhatIDo() {
         setTimeout(() => {
           nextSlide()
           setSwipeOffset(0)
+          setIsSwiping(false)
         }, 250)
       } else {
         // Swipe right → previous card
@@ -117,6 +120,7 @@ function WhatIDo() {
         setTimeout(() => {
           previousSlide()
           setSwipeOffset(0)
+          setIsSwiping(false)
         }, 250)
       }
 
@@ -189,7 +193,47 @@ function WhatIDo() {
 
           {visibleCards.map(({ item, offset }) => {
 
-            const isActive = whatIDoIndex(item.id) === activeIndex
+            const cardIndex = whatIDoIndex(item.id)
+
+            const isActive = cardIndex === activeIndex
+
+            const nextIndex =
+              (activeIndex + 1) % whatIDoData.length
+
+            const previousIndex =
+              (activeIndex - 1 + whatIDoData.length) %
+              whatIDoData.length
+
+            const isNext = cardIndex === nextIndex
+            const isPrevious = cardIndex === previousIndex
+
+            const cardWidth =
+              typeof window !== "undefined"
+                ? window.innerWidth
+                : 400
+
+            let cardTransform = "translateX(0)"
+
+            /*
+            * CURRENT CARD
+            */
+            if (isActive) {
+              cardTransform = `translateX(${swipeOffset}px)`
+            }
+
+            /*
+            * NEXT CARD ENTERING FROM RIGHT
+            */
+            if (isNext && swipeOffset < 0) {
+              cardTransform = `translateX(${cardWidth + swipeOffset}px)`
+            }
+
+            /*
+            * PREVIOUS CARD ENTERING FROM LEFT
+            */
+            if (isPrevious && swipeOffset > 0) {
+              cardTransform = `translateX(${-cardWidth + swipeOffset}px)`
+            }
 
             return (
               <article
@@ -197,16 +241,12 @@ function WhatIDo() {
                 className={`what-i-do__card ${
                   isActive ? "is-active" : ""
                 }`}
-                style={
-                  isActive
-                    ? {
-                        transform: `translateX(${swipeOffset}px)`,
-                        transition: isSwiping
-                          ? "none"
-                          : "transform 0.25s ease-out",
-                      }
-                    : undefined
-                }
+                style={{
+                  transform: cardTransform,
+                  transition: isSwiping
+                    ? "none"
+                    : "transform 0.25s ease-out",
+                }}
                 onClick={() => {
                   if (!isActive) {
                     setActiveIndex(

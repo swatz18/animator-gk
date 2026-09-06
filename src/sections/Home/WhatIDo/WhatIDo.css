@@ -773,34 +773,32 @@
 
 
   .what-i-do__cards {
-    width: 100%;
-    height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  gap: 0;
+  touch-action: pan-y;
+  overflow: hidden;
+}
 
-    gap: 0;
-    touch-action: pan-y;
-  }
+.what-i-do__card {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
 
-
-  /* Only active card visible */
-
-  .what-i-do__card {
-    display: none;
-
-    width: 100%;
-    height: 100%;
-
-    flex: 1;
-
-    border-radius: 15px;
-  }
-
-
-  .what-i-do__card.is-active {
-    display: block;
-
-    flex: 1;
-  }
-
+.what-i-do__card.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
 
   /* Disable hover expansion on touch */
 
