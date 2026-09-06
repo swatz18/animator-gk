@@ -832,39 +832,23 @@
   ======================================================= */
 
   .what-i-do__mobile-card {
+  position: relative;
+  flex: 0 0 calc(5.5555556% - 12px);
+  width: calc(5.5555556% - 12px);
+  height: 100%;
+  margin: 0 6px;
+  min-width: 0;
+  box-sizing: border-box;
 
-    position: relative;
+  border-radius: 15px;
+  overflow: hidden;
 
-    flex: 0 0 5.5555556%;
+  border: 1px solid #b941ff;
 
-    width: 5.5555556%;
-
-    height: 100%;
-
-    min-width: 0;
-
-    box-sizing: border-box;
-
-    border-radius: 15px;
-
-    overflow: hidden;
-
-    /*
-      PURPLE CARD GLOW
-    */
-
-    border: 1px solid #b941ff;
-
-    box-shadow:
-      0 0 0 1px
-        rgba(185, 65, 255, 0.35),
-
-      0 8px 25px
-        rgba(185, 65, 255, 0.22),
-
-      0 18px 45px
-        rgba(185, 65, 255, 0.18);
-  }
+  box-shadow:
+    0 0 0 1px rgba(185, 65, 255, 0.25),
+    0 4px 12px rgba(185, 65, 255, 0.16);
+}
 
 
   /* =======================================================

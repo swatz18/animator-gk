@@ -20,7 +20,9 @@ function WhatIDo() {
 
   const [cardsToShow, setCardsToShow] = useState(4)
 
-
+  const touchStartX = useRef<number>(0)
+  const touchStartY = useRef<number>(0)
+  const touchDirection = useRef<"horizontal" | "vertical" | null>(null)
   /* =========================================================
      MOBILE STATE
   ========================================================= */
@@ -55,10 +57,9 @@ function WhatIDo() {
 
   const [mobileAnimating, setMobileAnimating] =
     useState(false)
+  const [mobileTransitionDuration, setMobileTransitionDuration] =
+  useState(0)
 
-
-  const touchStartX =
-    useRef<number | null>(null)
 
 
   /* =========================================================
@@ -212,24 +213,15 @@ function WhatIDo() {
      MOBILE TOUCH START
   ========================================================= */
 
-  const handleTouchStart = (
-    event: TouchEvent<HTMLDivElement>
-  ) => {
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+  if (mobileAnimating) return
 
-    if (mobileAnimating) {
-      return
-    }
+  touchStartX.current = e.touches[0].clientX
+  touchStartY.current = e.touches[0].clientY
+  touchDirection.current = null
 
-
-    touchStartX.current =
-      event.touches[0].clientX
-
-
-    setMobileDragging(true)
-
-    setMobileOffset(0)
-
-  }
+  setMobileDragging(true)
+}
 
 
   /* =========================================================
@@ -240,31 +232,37 @@ function WhatIDo() {
      This is what gives the physical swipe feeling.
   ========================================================= */
 
-  const handleTouchMove = (
-    event: TouchEvent<HTMLDivElement>
-  ) => {
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+  if (mobileAnimating) return
 
-    if (
-      touchStartX.current === null ||
-      mobileAnimating
-    ) {
+  const currentX = e.touches[0].clientX
+  const currentY = e.touches[0].clientY
 
+  const deltaX = currentX - touchStartX.current
+  const deltaY = currentY - touchStartY.current
+
+  // Decide swipe direction only after the finger has moved enough
+  if (!touchDirection.current) {
+    if (Math.abs(deltaX) < 6 && Math.abs(deltaY) < 6) {
       return
-
     }
 
-
-    const currentX =
-      event.touches[0].clientX
-
-
-    const distance =
-      currentX - touchStartX.current
-
-
-    setMobileOffset(distance)
-
+    touchDirection.current =
+      Math.abs(deltaX) > Math.abs(deltaY)
+        ? "horizontal"
+        : "vertical"
   }
+
+  // If the gesture is vertical, let the page scroll normally
+  if (touchDirection.current === "vertical") {
+    return
+  }
+
+  // Horizontal swipe — prevent the page from moving vertically
+  e.preventDefault()
+
+  setMobileOffset(deltaX)
+}
 
 
   /* =========================================================
@@ -283,235 +281,165 @@ function WhatIDo() {
   ========================================================= */
 
   const handleTouchEnd = (
-    event: TouchEvent<HTMLDivElement>
-  ) => {
+  event: TouchEvent<HTMLDivElement>
+) => {
 
-    if (
-      touchStartX.current === null ||
-      mobileAnimating
-    ) {
-
-      return
-
-    }
+  if (mobileAnimating) {
+    return
+  }
 
 
-    const endX =
-      event.changedTouches[0].clientX
+  const endX =
+    event.changedTouches[0].clientX
 
 
-    const distance =
-      endX - touchStartX.current
+  const distance =
+    endX - touchStartX.current
 
 
-    const threshold = 50
+  const threshold = 50
 
 
-    touchStartX.current = null
+  const containerWidth =
+    event.currentTarget.clientWidth
 
 
-    /* =======================================================
-       SMALL SWIPE
-
-       Return to original position.
-    ======================================================= */
-
-    if (
-      Math.abs(distance) < threshold
-    ) {
-
-      setMobileDragging(false)
-
-      setMobileOffset(0)
-
-      return
-
-    }
+  // Keep touchStartX as a number ref; the next touch replaces its value.
 
 
-    /* =======================================================
-       START ANIMATION
-    ======================================================= */
+  /* =======================================================
+     SMALL SWIPE
+
+     Return smoothly to the starting position.
+  ======================================================= */
+
+  if (Math.abs(distance) < threshold) {
+
+    const progress =
+      Math.min(
+        Math.abs(distance) / containerWidth,
+        1
+      )
+
+
+    const duration =
+      Math.max(
+        140,
+        Math.round(280 * progress)
+      )
+
+
+    setMobileTransitionDuration(duration)
 
     setMobileDragging(false)
 
-    setMobileAnimating(true)
+    setMobileOffset(0)
+
+    window.setTimeout(() => {
+      setMobileTransitionDuration(0)
+    }, duration)
+
+    return
+  }
 
 
-    /* =======================================================
-       LEFT SWIPE
-    ======================================================= */
+  /* =======================================================
+     HOW MUCH OF THE CARD HAS ALREADY BEEN DRAGGED?
+  ======================================================= */
 
-    if (distance < 0) {
-
-      /*
-        Move the entire track exactly
-        one card width to the LEFT.
-      */
-
-      setMobileOffset(-window.innerWidth)
-
-
-      window.setTimeout(() => {
-
-        const rawIndex =
-          mobileIndex + 1
-
-
-        let finalIndex = rawIndex
-
-        let finalActiveIndex =
-          activeIndex + 1
-
-
-        /* ---------------------------------------------------
-           We reached the end of the middle copy.
-
-           Reposition to the beginning of the
-           middle copy WITHOUT animation.
-
-           The user sees exactly the same card.
-        --------------------------------------------------- */
-
-        if (
-          rawIndex >=
-          dataLength * 2
-        ) {
-
-          finalIndex = dataLength
-
-          finalActiveIndex = 0
-
-        }
-
-
-        /*
-          For normal movement:
-
-          6 → 7
-          7 → 8
-          8 → 9
-          etc.
-        */
-
-        else {
-
-          finalActiveIndex =
-            finalActiveIndex %
-            dataLength
-
-        }
-
-
-        /*
-          Disable transition before changing
-          the physical position.
-        */
-
-        setMobileDragging(true)
-
-        setMobileIndex(finalIndex)
-
-        setActiveIndex(
-          finalActiveIndex
-        )
-        setStartIndex(finalActiveIndex)
-
-        setMobileOffset(0)
-
-
-        /*
-          Let browser paint the reset position,
-          then turn dragging mode back off.
-        */
-
-        requestAnimationFrame(() => {
-
-          requestAnimationFrame(() => {
-
-            setMobileDragging(false)
-
-            setMobileAnimating(false)
-
-          })
-
-        })
-
-      }, 300)
-
-
-      return
-
-    }
-
-
-    /* =======================================================
-       RIGHT SWIPE
-    ======================================================= */
-
-    /*
-      Move the entire track exactly
-      one card width to the RIGHT.
-    */
-
-    setMobileOffset(
-      window.innerWidth
+  const progress =
+    Math.min(
+      Math.abs(distance) / containerWidth,
+      1
     )
+
+
+  /*
+    Remaining distance determines animation time.
+
+    More already dragged
+      → less animation
+
+    Less already dragged
+      → slightly more animation
+  */
+
+  const remaining =
+    1 - progress
+
+
+  const duration =
+    Math.round(
+      120 + remaining * 180
+    )
+
+
+  setMobileTransitionDuration(duration)
+
+  setMobileDragging(false)
+
+  setMobileAnimating(true)
+
+
+  /* =======================================================
+     LEFT SWIPE
+  ======================================================= */
+
+  if (distance < 0) {
+
+    setMobileOffset(-containerWidth)
 
 
     window.setTimeout(() => {
 
-      const rawIndex =
-        mobileIndex - 1
+      let nextIndex =
+        mobileIndex + 1
 
 
-      let finalIndex = rawIndex
-
-      let finalActiveIndex =
-        activeIndex - 1
+      let nextActiveIndex =
+        activeIndex + 1
 
 
       /* ---------------------------------------------------
-         We reached the beginning of the first copy.
-
-         Jump to the end of the middle copy
-         with transition disabled.
+         LOOP BACK TO MIDDLE COPY
       --------------------------------------------------- */
 
-      if (rawIndex < dataLength) {
+      if (
+        nextIndex >=
+        dataLength * 2
+      ) {
 
-        finalIndex =
-          dataLength * 2 - 1
+        nextIndex =
+          dataLength
 
-        finalActiveIndex =
-          dataLength - 1
+        nextActiveIndex = 0
 
       }
-
       else {
 
-        finalActiveIndex =
-          (
-            finalActiveIndex +
-            dataLength
-          ) %
+        nextActiveIndex =
+          nextActiveIndex %
           dataLength
 
       }
 
 
       /*
-        Disable transition before reset.
+        Reset the track while transition
+        is disabled.
       */
 
       setMobileDragging(true)
 
-      setMobileIndex(finalIndex)
+      setMobileIndex(nextIndex)
 
       setActiveIndex(
-        finalActiveIndex
+        nextActiveIndex
       )
-      setStartIndex(finalActiveIndex)
+
+      setStartIndex(
+        nextActiveIndex
+      )
 
       setMobileOffset(0)
 
@@ -524,13 +452,102 @@ function WhatIDo() {
 
           setMobileAnimating(false)
 
+          setMobileTransitionDuration(0)
+
         })
 
       })
 
-    }, 300)
+    }, duration)
 
+
+    return
   }
+
+
+  /* =======================================================
+     RIGHT SWIPE
+  ======================================================= */
+
+  setMobileOffset(
+    containerWidth
+  )
+
+
+  window.setTimeout(() => {
+
+    let previousIndex =
+      mobileIndex - 1
+
+
+    let previousActiveIndex =
+      activeIndex - 1
+
+
+    /* ---------------------------------------------------
+       LOOP BACK TO MIDDLE COPY
+    --------------------------------------------------- */
+
+    if (
+      previousIndex < dataLength
+    ) {
+
+      previousIndex =
+        dataLength * 2 - 1
+
+      previousActiveIndex =
+        dataLength - 1
+
+    }
+    else {
+
+      previousActiveIndex =
+        (
+          previousActiveIndex +
+          dataLength
+        ) %
+        dataLength
+
+    }
+
+
+    /*
+      Reset without animation.
+    */
+
+    setMobileDragging(true)
+
+    setMobileIndex(
+      previousIndex
+    )
+
+    setActiveIndex(
+      previousActiveIndex
+    )
+
+    setStartIndex(
+      previousActiveIndex
+    )
+
+    setMobileOffset(0)
+
+
+    requestAnimationFrame(() => {
+
+      requestAnimationFrame(() => {
+
+        setMobileDragging(false)
+
+        setMobileAnimating(false)
+
+        setMobileTransitionDuration(0)
+
+      })
+
+    })
+
+  }, duration)
+}
 
 
   /* =========================================================
@@ -840,7 +857,7 @@ function WhatIDo() {
             transition:
               mobileDragging
                 ? "none"
-                : "transform 0.3s cubic-bezier(0.22, 1, 0.36, 1)",
+                : `transform ${mobileTransitionDuration}ms cubic-bezier(0.25, 0.8, 0.25, 1)`,
           }}
         >
 
