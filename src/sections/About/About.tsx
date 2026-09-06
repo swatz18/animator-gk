@@ -1,23 +1,13 @@
-import Header from "../../components/Header/Header";
 import "./About.css";
 import JourneyFour from "./Journey/JourneyFour";
 import JourneyOne from "./Journey/JourneyOne";
 import JourneyThree from "./Journey/JourneyThree";
 import JourneyTwo from "./Journey/JourneyTwo";
-
-// import JourneyTwo from "./Journey/JourneyTwo";
-// import JourneyThree from "./Journey/JourneyThree";  
-// import JourneyFour from "./Journey/JourneyFour";
 import WhatIBring from "./Journey/WhatIBring";
 
 function About() {
   return (
     <main className="about-page">
-
-      {/* ================= NAVBAR ================= */}
-
-      <Header />
-
 
       {/* ================= ABOUT HERO ================= */}
 

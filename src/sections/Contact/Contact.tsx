@@ -1,4 +1,4 @@
-import Header from "../../components/Header/Header";
+
 import "./Contact.css";
 
 import { contactData } from "./ContactData";
@@ -6,10 +6,6 @@ import { contactData } from "./ContactData";
 function Contact() {
   return (
     <section className="contact-page">
-
-      {/* ================= TOP NAV ================= */}
-
-      <Header />
 
 
       {/* ================= BACKGROUND EFFECT ================= */}

@@ -1,0 +1,652 @@
+/* =========================================================
+   WORK PAGE
+========================================================= */
+
+.work-page {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 1px);
+
+  overflow: hidden;
+
+  background: #050507;
+  color: #ffffff;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.work-page__content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1600px;
+
+  margin: 0 auto;
+
+  padding:
+    clamp(140px, 12vw, 190px)
+    clamp(25px, 6.4vw, 105px)
+    clamp(80px, 9vw, 130px);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.work-page__title {
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: inherit;
+
+  /*
+    Slightly smaller scaling so the text
+    never gets clipped on tablets/phones.
+  */
+  font-size: clamp(54px, 7.8vw, 140px);
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+}
+
+.work-page__title span {
+  display: block;
+
+  /*
+    Prevent glyphs from visually touching
+    the container edge.
+  */
+  padding-bottom: 3px;
+}
+
+.work-page__title-purple {
+  color: #7c18ff;
+
+  background: linear-gradient(
+    90deg,
+    #7317ff 0%,
+    #9c27ff 50%,
+    #7017ff 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 25px rgba(126, 24, 255, 0.18);
+}
+
+
+/* =========================================================
+   ACCENT LINE
+========================================================= */
+
+.work-page__line {
+  width: 60px;
+  height: 2px;
+
+  margin-top: clamp(25px, 2.5vw, 34px);
+  margin-bottom: clamp(20px, 2vw, 28px);
+
+  background: #a21cff;
+
+  box-shadow:
+    0 0 8px rgba(162, 28, 255, 0.45);
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.work-page__message {
+  margin: 0;
+
+  max-width: 900px;
+
+  font-size: clamp(25px, 2.5vw, 46px);
+
+  line-height: 1.2;
+
+  font-weight: 400;
+
+  letter-spacing: -0.025em;
+}
+
+.work-page__message span {
+  color: #a21cff;
+
+  margin-left: 7px;
+
+  display: inline-block;
+
+  text-shadow:
+    0 0 12px rgba(162, 28, 255, 0.45);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.work-page__description {
+  margin:
+    clamp(12px, 1.2vw, 18px)
+    0
+    0;
+
+  max-width: 620px;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: clamp(14px, 1vw, 18px);
+
+  line-height: 1.55;
+
+  letter-spacing: 0.01em;
+}
+
+
+/* =========================================================
+   BEHANCE BUTTON
+========================================================= */
+
+.work-page__button {
+  display: inline-flex;
+  align-items: center;
+
+  align-self: flex-start;
+
+  max-width: 100%;
+
+  min-height: 62px;
+
+  margin-top: clamp(28px, 3vw, 40px);
+
+  padding:
+    0
+    21px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #a21cff;
+
+  border-radius: 4px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  background: transparent;
+
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.work-page__button:hover {
+  background: rgba(162, 28, 255, 0.08);
+
+  box-shadow:
+    0 0 20px rgba(162, 28, 255, 0.15);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BEHANCE LOGO
+========================================================= */
+
+.work-page__behance {
+  flex-shrink: 0;
+
+  min-width: 55px;
+
+  color: #a21cff;
+
+  font-size: 26px;
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: -0.08em;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.work-page__divider {
+  width: 1px;
+  height: 29px;
+
+  flex-shrink: 0;
+
+  margin:
+    0
+    19px;
+
+  background: #a21cff;
+}
+
+
+/* =========================================================
+   BUTTON TEXT
+========================================================= */
+
+.work-page__button-text {
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.work-page__arrow {
+  flex-shrink: 0;
+
+  margin-left: 24px;
+
+  color: #a21cff;
+
+  font-size: 29px;
+
+  line-height: 1;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.work-page__button:hover .work-page__arrow {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   PURPLE AMBIENT GLOW
+========================================================= */
+
+.work-page__glow {
+  position: absolute;
+
+  z-index: 1;
+
+  right: -8%;
+  bottom: -35%;
+
+  width: clamp(350px, 42vw, 650px);
+  height: clamp(350px, 42vw, 650px);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(112, 18, 255, 0.48) 0%,
+      rgba(112, 18, 255, 0.22) 28%,
+      rgba(112, 18, 255, 0.07) 50%,
+      transparent 72%
+    );
+
+  filter: blur(25px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 600px) and (max-width: 1199px) {
+
+  .work-page {
+    min-height: auto;
+  }
+
+  .work-page__content {
+    padding:
+      145px
+      clamp(35px, 7vw, 75px)
+      90px;
+  }
+
+  .work-page__title {
+    font-size: clamp(62px, 10vw, 105px);
+
+    line-height: 0.96;
+  }
+
+  .work-page__message {
+    font-size: clamp(27px, 3.5vw, 40px);
+  }
+
+  .work-page__description {
+    max-width: 560px;
+
+    font-size: 16px;
+  }
+
+  .work-page__button {
+    min-height: 60px;
+
+    margin-top: 32px;
+  }
+
+  .work-page__glow {
+    right: -22%;
+    bottom: -25%;
+
+    width: 500px;
+    height: 500px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 599px) {
+
+  .work-page {
+    min-height: auto;
+
+    overflow: hidden;
+  }
+
+
+  /* -------------------------------------------------------
+     CONTENT
+  ------------------------------------------------------- */
+
+  .work-page__content {
+    padding:
+      120px
+      24px
+      65px;
+  }
+
+
+  /* -------------------------------------------------------
+     TITLE
+  ------------------------------------------------------- */
+
+  .work-page__title {
+    font-size: clamp(
+      47px,
+      14.8vw,
+      76px
+    );
+
+    line-height: 0.96;
+
+    letter-spacing: -0.055em;
+  }
+
+  .work-page__title span {
+    padding-bottom: 2px;
+  }
+
+
+  /* -------------------------------------------------------
+     LINE
+  ------------------------------------------------------- */
+
+  .work-page__line {
+    width: 47px;
+    height: 2px;
+
+    margin-top: 23px;
+    margin-bottom: 20px;
+  }
+
+
+  /* -------------------------------------------------------
+     MESSAGE
+  ------------------------------------------------------- */
+
+  .work-page__message {
+    max-width: 100%;
+
+    font-size: clamp(
+      23px,
+      6.9vw,
+      32px
+    );
+
+    line-height: 1.2;
+  }
+
+  .work-page__message span {
+    margin-left: 5px;
+  }
+
+
+  /* -------------------------------------------------------
+     DESCRIPTION
+  ------------------------------------------------------- */
+
+  .work-page__description {
+    max-width: 340px;
+
+    margin-top: 12px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+  }
+
+
+  /* -------------------------------------------------------
+     BUTTON
+  ------------------------------------------------------- */
+
+  .work-page__button {
+    min-height: 56px;
+
+    margin-top: 28px;
+
+    padding:
+      0
+      14px;
+  }
+
+
+  .work-page__behance {
+    min-width: 40px;
+
+    font-size: 22px;
+  }
+
+
+  .work-page__divider {
+    height: 25px;
+
+    margin:
+      0
+      11px;
+  }
+
+
+  .work-page__button-text {
+    font-size: 8.5px;
+
+    letter-spacing: 0.085em;
+  }
+
+
+  .work-page__arrow {
+    margin-left: 12px;
+
+    font-size: 24px;
+  }
+
+
+  /* -------------------------------------------------------
+     GLOW
+  ------------------------------------------------------- */
+
+  .work-page__glow {
+    right: -48%;
+    bottom: -25%;
+
+    width: 390px;
+    height: 390px;
+
+    opacity: 0.7;
+
+    filter: blur(30px);
+  }
+}
+
+
+/* =========================================================
+   SHORT MOBILE SCREENS
+========================================================= */
+
+@media (max-width: 599px) and (max-height: 700px) {
+
+  .work-page__content {
+    padding-top: 105px;
+    padding-bottom: 55px;
+  }
+
+  .work-page__title {
+    font-size: clamp(
+      44px,
+      14.2vw,
+      65px
+    );
+  }
+
+  .work-page__line {
+    margin-top: 19px;
+    margin-bottom: 17px;
+  }
+
+  .work-page__message {
+    font-size: clamp(
+      21px,
+      6.5vw,
+      28px
+    );
+  }
+
+  .work-page__description {
+    margin-top: 9px;
+
+    font-size: 13.5px;
+  }
+
+  .work-page__button {
+    margin-top: 22px;
+  }
+}
+
+
+/* =========================================================
+   VERY NARROW PHONES
+========================================================= */
+
+@media (max-width: 370px) {
+
+  .work-page__content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .work-page__title {
+    font-size: clamp(
+      42px,
+      14.2vw,
+      55px
+    );
+
+    line-height: 0.98;
+  }
+
+  .work-page__message {
+    font-size: 21px;
+  }
+
+  .work-page__description {
+    max-width: 295px;
+
+    font-size: 13px;
+  }
+
+  .work-page__button {
+    min-height: 53px;
+
+    padding:
+      0
+      10px;
+  }
+
+  .work-page__behance {
+    min-width: 36px;
+
+    font-size: 20px;
+  }
+
+  .work-page__divider {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  .work-page__button-text {
+    font-size: 7.5px;
+
+    letter-spacing: 0.065em;
+  }
+
+  .work-page__arrow {
+    margin-left: 8px;
+
+    font-size: 22px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .work-page__button,
+  .work-page__arrow {
+    transition: none;
+  }
+
+}

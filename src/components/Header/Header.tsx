@@ -31,6 +31,10 @@ function Header() {
           ABOUT
         </Link>
 
+        <Link to="/work">
+          WORK
+        </Link>
+
         <Link to="/learn">
           LEARN
         </Link>

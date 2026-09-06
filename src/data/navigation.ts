@@ -3,13 +3,14 @@ export const navigation = [
     label: "Home",
     path: "/",
   },
-  // {
-  //   label: "Work",
-  //   path: "/work",
-  // },
+
   {
     label: "About",
     path: "/about",
+  },
+  {
+    label: "Work",
+    path: "/work",
   },
   {
     label: "Learn",

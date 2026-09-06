@@ -1,16 +1,14 @@
-/* =====================================================
+/* =========================================================
    CONTACT PAGE
-===================================================== */
+========================================================= */
 
 .contact-page {
   position: relative;
-
   width: 100%;
-  min-height: 100svh;
   height: auto;
+  min-height: 0;
 
   box-sizing: border-box;
-
   overflow: hidden;
 
   background:
@@ -25,9 +23,10 @@
 }
 
 
-/* =====================================================
-   NAVBAR
-===================================================== */
+/* =========================================================
+   CONTACT NAVBAR
+   Kept for compatibility if the Contact component uses it.
+========================================================= */
 
 .contact-navbar {
   position: relative;
@@ -50,27 +49,23 @@
 }
 
 
-/* Brand */
+/* =========================================================
+   BRAND
+========================================================= */
 
 .contact-brand {
   display: flex;
   align-items: center;
-
   gap: 10px;
 
   white-space: nowrap;
 }
 
-
-/* AG logo */
-
 .brand-ag {
   font-size: 38px;
-
   font-weight: 800;
 
   letter-spacing: -5px;
-
   line-height: 1;
 
   color: #ffffff;
@@ -80,16 +75,12 @@
   margin-left: -2px;
 
   font-size: 38px;
-
   font-weight: 800;
 
   letter-spacing: -5px;
 
   color: #8f2cff;
 }
-
-
-/* Purple dot */
 
 .brand-dot {
   width: 6px;
@@ -106,46 +97,38 @@
 }
 
 
-/* Section number */
+/* =========================================================
+   SECTION LABEL
+========================================================= */
 
 .contact-section-number {
   margin-left: 12px;
 
   font-size: 13px;
-
   font-weight: 600;
 
   letter-spacing: 2px;
 }
 
-
-/* Slash */
-
 .contact-slash {
   color: rgba(255, 255, 255, 0.4);
-
   font-size: 13px;
 }
 
-
-/* Contact */
-
 .contact-section-name {
   font-size: 13px;
-
   font-weight: 600;
 
   letter-spacing: 3px;
 }
 
 
-/* =====================================================
+/* =========================================================
    NAVIGATION
-===================================================== */
+========================================================= */
 
 .contact-nav {
   display: flex;
-
   align-items: center;
 
   gap: 42px;
@@ -157,7 +140,6 @@
   text-decoration: none;
 
   font-size: 12px;
-
   font-weight: 600;
 
   letter-spacing: 2px;
@@ -172,11 +154,12 @@
 }
 
 
-/* Collaborate button */
+/* =========================================================
+   COLLABORATE BUTTON
+========================================================= */
 
 .contact-nav-button {
   display: flex;
-
   align-items: center;
 
   gap: 7px;
@@ -202,30 +185,34 @@
 }
 
 
-/* =====================================================
-   MAIN CONTENT
-===================================================== */
+/* =========================================================
+   MAIN CONTACT CONTENT
+========================================================= */
 
 .contact-content {
   position: relative;
   z-index: 5;
 
   width: 100%;
-  min-height: calc(100svh - 86px);
-  height: auto;
 
-  padding: 40px 6.5vw;
+  height: auto;
+  min-height: 0;
+
+  padding:
+    72px
+    6.5vw
+    78px;
 
   box-sizing: border-box;
 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 
-/* =====================================================
+/* =========================================================
    LEFT CONTENT
-===================================================== */
+========================================================= */
 
 .contact-left {
   position: relative;
@@ -234,25 +221,31 @@
 }
 
 
-/* =====================================================
+/* =========================================================
    MAIN TITLE
-===================================================== */
+========================================================= */
 
 .contact-title {
   display: flex;
   flex-direction: column;
 
-  font-size: clamp(
-    110px,
-    10vw,
-    180px
-  );
+  margin: 0;
+
+  font-size:
+    clamp(
+      110px,
+      10vw,
+      180px
+    );
 
   line-height: 0.84;
+
   font-weight: 800;
+
   letter-spacing: -7px;
 
   text-transform: uppercase;
+
   font-stretch: condensed;
 }
 
@@ -268,9 +261,9 @@
 }
 
 
-/* =====================================================
-   TITLE LINE
-===================================================== */
+/* =========================================================
+   TITLE ACCENT LINE
+========================================================= */
 
 .contact-title-line {
   width: 68px;
@@ -285,25 +278,29 @@
 }
 
 
-/* =====================================================
+/* =========================================================
    EMAIL
-===================================================== */
+========================================================= */
 
 .contact-email {
   width: fit-content;
   max-width: 100%;
 
   margin-top: 20px;
+
   padding-bottom: 10px;
 
   display: flex;
   align-items: center;
+
   gap: 24px;
 
   color: #ffffff;
+
   text-decoration: none;
 
-  border-bottom: 2px solid #b43cff;
+  border-bottom:
+    2px solid #b43cff;
 
   transition:
     color 0.25s ease,
@@ -317,11 +314,12 @@
 }
 
 .contact-email > span:first-child {
-  font-size: clamp(
-    32px,
-    3.1vw,
-    53px
-  );
+  font-size:
+    clamp(
+      32px,
+      3.1vw,
+      53px
+    );
 
   font-weight: 400;
 
@@ -339,22 +337,33 @@
 }
 
 
-/* =====================================================
+/* =========================================================
    DESCRIPTION
-===================================================== */
+========================================================= */
 
 .contact-description {
-  margin: 15px 0 0;
+  margin:
+    15px
+    0
+    0;
 
   font-size: 17px;
+
   line-height: 1.5;
 
-  color: rgba(255, 255, 255, 0.62);
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.62
+    );
 }
 
-/* =====================================================
+
+/* =========================================================
    RIGHT SIDE GLOW
-===================================================== */
+========================================================= */
 
 .contact-glow {
   position: absolute;
@@ -384,22 +393,32 @@
 }
 
 
-/* =====================================================
+/* =========================================================
    CONCENTRIC RINGS
-===================================================== */
+========================================================= */
 
 .contact-ring {
   position: absolute;
 
   border-radius: 50%;
 
-  border: 1px solid
-    rgba(157, 68, 255, 0.13);
+  border:
+    1px solid
+    rgba(
+      157,
+      68,
+      255,
+      0.13
+    );
 
   left: 50%;
   top: 50%;
 
-  transform: translate(-50%, -50%);
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
 
   pointer-events: none;
 }
@@ -429,29 +448,36 @@
   height: 720px;
 }
 
-/* =========================================================
-   RESPONSIVE — CONTACT PAGE
-   ========================================================= */
-
 
 /* =========================================================
    LARGE LAPTOP / SMALL DESKTOP
    1200px – 1400px
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 1400px) {
 
   .contact-content {
-    min-height: calc(100svh - 86px);
-    padding: 55px 6vw 60px;
+    padding:
+      62px
+      6vw
+      68px;
   }
 
   .contact-left {
-    width: min(850px, 68vw);
+    width:
+      min(
+        850px,
+        68vw
+      );
   }
 
   .contact-title {
-    font-size: clamp(105px, 9.5vw, 155px);
+    font-size:
+      clamp(
+        105px,
+        9.5vw,
+        155px
+      );
   }
 
   .contact-title-line {
@@ -463,7 +489,12 @@
   }
 
   .contact-email > span:first-child {
-    font-size: clamp(30px, 3vw, 48px);
+    font-size:
+      clamp(
+        30px,
+        3vw,
+        48px
+      );
   }
 
   .contact-description {
@@ -474,6 +505,7 @@
   .contact-glow {
     width: 800px;
     height: 800px;
+
     right: -260px;
     top: 180px;
   }
@@ -483,15 +515,12 @@
 /* =========================================================
    TABLET LANDSCAPE / IPAD
    901px – 1199px
-   ========================================================= */
+========================================================= */
 
-@media (min-width: 901px) and (max-width: 1199px) {
-
-  .contact-page {
-    min-height: 100svh;
-    height: auto;
-    overflow: hidden;
-  }
+@media
+  (min-width: 901px)
+  and
+  (max-width: 1199px) {
 
   .contact-navbar {
     height: 78px;
@@ -512,27 +541,35 @@
   }
 
   .contact-content {
-    min-height: calc(100svh - 78px);
+    min-height: 0;
     height: auto;
 
     padding:
-      55px
+      58px
       5vw
-      55px;
+      65px;
+
+    align-items: flex-start;
   }
 
   .contact-left {
-    width: min(720px, 78vw);
+    width:
+      min(
+        720px,
+        78vw
+      );
   }
 
   .contact-title {
-    font-size: clamp(
-      82px,
-      11vw,
-      125px
-    );
+    font-size:
+      clamp(
+        82px,
+        11vw,
+        125px
+      );
 
     line-height: .86;
+
     letter-spacing: -5px;
   }
 
@@ -546,11 +583,12 @@
   }
 
   .contact-email > span:first-child {
-    font-size: clamp(
-      28px,
-      3.4vw,
-      42px
-    );
+    font-size:
+      clamp(
+        28px,
+        3.4vw,
+        42px
+      );
 
     white-space: normal;
   }
@@ -581,15 +619,12 @@
 /* =========================================================
    TABLET PORTRAIT
    768px – 900px
-   ========================================================= */
+========================================================= */
 
-@media (min-width: 768px) and (max-width: 900px) {
-
-  .contact-page {
-    min-height: 100svh;
-    height: auto;
-    overflow: hidden;
-  }
+@media
+  (min-width: 768px)
+  and
+  (max-width: 900px) {
 
   .contact-navbar {
     height: 75px;
@@ -601,13 +636,15 @@
   }
 
   .contact-content {
-    min-height: calc(100svh - 75px);
+    min-height: 0;
     height: auto;
 
     padding:
       55px
       35px
-      50px;
+      60px;
+
+    align-items: flex-start;
   }
 
   .contact-left {
@@ -616,13 +653,15 @@
   }
 
   .contact-title {
-    font-size: clamp(
-      78px,
-      13vw,
-      115px
-    );
+    font-size:
+      clamp(
+        78px,
+        13vw,
+        115px
+      );
 
     line-height: .86;
+
     letter-spacing: -5px;
   }
 
@@ -636,11 +675,12 @@
   }
 
   .contact-email > span:first-child {
-    font-size: clamp(
-      27px,
-      4vw,
-      40px
-    );
+    font-size:
+      clamp(
+        27px,
+        4vw,
+        40px
+      );
 
     white-space: normal;
   }
@@ -671,15 +711,12 @@
 /* =========================================================
    MOBILE LANDSCAPE / LARGE PHONE
    601px – 767px
-   ========================================================= */
+========================================================= */
 
-@media (min-width: 601px) and (max-width: 767px) {
-
-  .contact-page {
-    min-height: 100svh;
-    height: auto;
-    overflow: hidden;
-  }
+@media
+  (min-width: 601px)
+  and
+  (max-width: 767px) {
 
   .contact-navbar {
     height: 72px;
@@ -691,13 +728,15 @@
   }
 
   .contact-content {
-    min-height: calc(100svh - 72px);
+    min-height: 0;
     height: auto;
 
     padding:
       48px
       28px
-      45px;
+      52px;
+
+    align-items: flex-start;
   }
 
   .contact-left {
@@ -705,13 +744,15 @@
   }
 
   .contact-title {
-    font-size: clamp(
-      68px,
-      15vw,
-      105px
-    );
+    font-size:
+      clamp(
+        68px,
+        15vw,
+        105px
+      );
 
     line-height: .86;
+
     letter-spacing: -4px;
   }
 
@@ -725,13 +766,15 @@
   }
 
   .contact-email > span:first-child {
-    font-size: clamp(
-      24px,
-      5vw,
-      34px
-    );
+    font-size:
+      clamp(
+        24px,
+        5vw,
+        34px
+      );
 
     white-space: normal;
+
     overflow-wrap: anywhere;
   }
 
@@ -759,15 +802,12 @@
 /* =========================================================
    MOBILE
    401px – 600px
-   ========================================================= */
+========================================================= */
 
-@media (min-width: 401px) and (max-width: 600px) {
-
-  .contact-page {
-    min-height: 100svh;
-    height: auto;
-    overflow: hidden;
-  }
+@media
+  (min-width: 401px)
+  and
+  (max-width: 600px) {
 
   .contact-navbar {
     height: 70px;
@@ -793,14 +833,21 @@
     display: none;
   }
 
+  /*
+     IMPORTANT:
+     The content is no longer viewport-height.
+     It starts naturally below the navbar.
+  */
   .contact-content {
-    min-height: calc(100svh - 70px);
+    min-height: 0;
     height: auto;
 
     padding:
-      45px
+      42px
       22px
-      40px;
+      48px;
+
+    align-items: flex-start;
   }
 
   .contact-left {
@@ -811,16 +858,19 @@
     font-size: 21vw;
 
     line-height: .87;
+
     letter-spacing: -3px;
   }
 
   .contact-title-line {
     width: 58px;
+
     margin-top: 22px;
   }
 
   .contact-email {
     margin-top: 18px;
+
     gap: 10px;
   }
 
@@ -828,6 +878,7 @@
     font-size: 23px;
 
     white-space: normal;
+
     overflow-wrap: anywhere;
   }
 
@@ -839,6 +890,7 @@
     margin-top: 14px;
 
     font-size: 14px;
+
     line-height: 1.65;
   }
 
@@ -855,15 +907,9 @@
 /* =========================================================
    SMALL MOBILE
    400px AND BELOW
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 400px) {
-
-  .contact-page {
-    min-height: 100svh;
-    height: auto;
-    overflow: hidden;
-  }
 
   .contact-navbar {
     height: 66px;
@@ -890,13 +936,15 @@
   }
 
   .contact-content {
-    min-height: calc(100svh - 66px);
+    min-height: 0;
     height: auto;
 
     padding:
       42px
       18px
-      35px;
+      44px;
+
+    align-items: flex-start;
   }
 
   .contact-left {
@@ -907,16 +955,19 @@
     font-size: 22vw;
 
     line-height: .88;
+
     letter-spacing: -3px;
   }
 
   .contact-title-line {
     width: 52px;
+
     margin-top: 20px;
   }
 
   .contact-email {
     margin-top: 16px;
+
     gap: 8px;
   }
 
@@ -924,6 +975,7 @@
     font-size: 21px;
 
     white-space: normal;
+
     overflow-wrap: anywhere;
   }
 
@@ -935,6 +987,7 @@
     margin-top: 13px;
 
     font-size: 14px;
+
     line-height: 1.6;
   }
 
@@ -945,4 +998,197 @@
     right: -260px;
     top: 260px;
   }
+}
+
+
+/* =========================================================
+   SHORT MOBILE SCREENS
+========================================================= */
+
+@media
+  (max-width: 600px)
+  and
+  (max-height: 700px) {
+
+  .contact-content {
+    padding-top: 36px;
+    padding-bottom: 38px;
+  }
+}
+/* =========================================================
+   CONTACT PAGE — REMOVE FORCED VIEWPORT HEIGHT
+   Footer should follow content naturally
+========================================================= */
+
+.contact-page {
+  min-height: auto !important;
+  height: auto !important;
+}
+
+/* Main contact content should size to its content */
+.contact-content {
+  min-height: auto !important;
+  height: auto !important;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MOBILE — 401px to 600px
+========================================================= */
+
+@media (min-width: 401px) and (max-width: 600px) {
+
+  .contact-page {
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  .contact-content {
+    min-height: auto !important;
+    height: auto !important;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE — 400px and below
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .contact-page {
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  .contact-content {
+    min-height: auto !important;
+    height: auto !important;
+  }
+}
+
+
+/* =========================================================
+   TABLET — 601px to 900px
+========================================================= */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+  .contact-page {
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  .contact-content {
+    min-height: auto !important;
+    height: auto !important;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP / LAPTOP
+========================================================= */
+
+@media (min-width: 901px) {
+
+  .contact-page {
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  .contact-content {
+    min-height: auto !important;
+    height: auto !important;
+  }
+}
+/* =========================================================
+   FINAL CONTACT PAGE HEIGHT FIX
+   Header + Footer are global
+========================================================= */
+
+.contact-page {
+  min-height: auto !important;
+  height: auto !important;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.contact-content {
+  min-height: auto !important;
+  height: auto !important;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  padding-top: 120px;
+  padding-bottom: 110px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1199px) {
+
+  .contact-content {
+    padding-top: 105px;
+    padding-bottom: 90px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET / IPAD
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .contact-content {
+    padding-top: 100px;
+    padding-bottom: 85px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .contact-page {
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  .contact-content {
+    min-height: auto !important;
+    height: auto !important;
+
+    padding-top: 105px;
+    padding-bottom: 65px;
+
+    align-items: flex-start;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .contact-content {
+    padding-top: 95px;
+    padding-bottom: 55px;
+  }
+
 }
