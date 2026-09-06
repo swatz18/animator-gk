@@ -3,10 +3,10 @@ export const navigation = [
     label: "Home",
     path: "/",
   },
-  {
-    label: "Work",
-    path: "/work",
-  },
+  // {
+  //   label: "Work",
+  //   path: "/work",
+  // },
   {
     label: "About",
     path: "/about",

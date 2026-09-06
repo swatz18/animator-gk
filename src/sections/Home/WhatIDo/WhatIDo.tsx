@@ -10,6 +10,8 @@ function WhatIDo() {
   const [cardsToShow, setCardsToShow] = useState(4)
 
   const touchStartX = useRef<number | null>(null)
+  const [swipeOffset, setSwipeOffset] = useState(0)
+  const [isSwiping, setIsSwiping] = useState(false)
 
     useEffect(() => {
       const updateCardsToShow = () => {
@@ -68,27 +70,54 @@ function WhatIDo() {
     current === 0 ? whatIDoData.length - 1 : current - 1
   )
 }
-    const handleTouchStart = (event: TouchEvent<HTMLDivElement>) => {
+      const handleTouchStart = (event: TouchEvent<HTMLElement>) => {
       touchStartX.current = event.touches[0].clientX
+      setIsSwiping(true)
     }
 
-    const handleTouchEnd = (event: TouchEvent<HTMLDivElement>) => {
+    const handleTouchMove = (event: TouchEvent<HTMLElement>) => {
+      if (touchStartX.current === null) return
+
+      const currentX = event.touches[0].clientX
+      const distance = currentX - touchStartX.current
+
+      setSwipeOffset(distance)
+    }
+
+    const handleTouchEnd = (event: TouchEvent<HTMLElement>) => {
       if (touchStartX.current === null) return
 
       const touchEndX = event.changedTouches[0].clientX
-      const swipeDistance = touchStartX.current - touchEndX
+      const swipeDistance = touchEndX - touchStartX.current
 
-      const swipeThreshold = 50
+      const swipeThreshold = 60
+      const cardWidth = event.currentTarget.clientWidth
 
       if (Math.abs(swipeDistance) < swipeThreshold) {
+        setSwipeOffset(0)
+        setIsSwiping(false)
         touchStartX.current = null
         return
       }
 
-      if (swipeDistance > 0) {
-        nextSlide()
+      setIsSwiping(false)
+
+      if (swipeDistance < 0) {
+        // Swipe left → next card
+        setSwipeOffset(-cardWidth)
+
+        setTimeout(() => {
+          nextSlide()
+          setSwipeOffset(0)
+        }, 250)
       } else {
-        previousSlide()
+        // Swipe right → previous card
+        setSwipeOffset(cardWidth)
+
+        setTimeout(() => {
+          previousSlide()
+          setSwipeOffset(0)
+        }, 250)
       }
 
       touchStartX.current = null
@@ -154,6 +183,7 @@ function WhatIDo() {
         <div
           className="what-i-do__cards"
           onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
 
@@ -165,8 +195,18 @@ function WhatIDo() {
               <article
                 key={`${item.id}-${offset}`}
                 className={`what-i-do__card ${
-                    isActive ? "is-active" : ""
+                  isActive ? "is-active" : ""
                 }`}
+                style={
+                  isActive
+                    ? {
+                        transform: `translateX(${swipeOffset}px)`,
+                        transition: isSwiping
+                          ? "none"
+                          : "transform 0.25s ease-out",
+                      }
+                    : undefined
+                }
                 onClick={() => {
                   if (!isActive) {
                     setActiveIndex(

@@ -70,7 +70,7 @@ const Testimonial: React.FC = () => {
             <p>
               Real feedback from{" "}
               <span>amazing people</span> I've had
-              <br className="desktop-break" />
+              <br />
               the pleasure to work with.
             </p>
 
