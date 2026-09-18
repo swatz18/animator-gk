@@ -8,6 +8,29 @@ import WhatIBring from "./Journey/WhatIBring";
 function About() {
   return (
     <main className="about-page">
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          "@id": "https://animatorgk.com/about#profile",
+          "url": "https://animatorgk.com/about",
+          "mainEntity": {
+            "@type": "Person",
+            "@id": "https://animatorgk.com/about#person",
+            "name": "Gopalakrishnan",
+            "alternateName": "Animator GK",
+            "jobTitle": "Freelance 3D Artist and Motion Designer",
+            "description": "Freelance 3D Artist, Motion Designer and Explainer Video Artist based in Coimbatore, Tamil Nadu, India.",
+            "url": "https://animatorgk.com/about",
+            "sameAs": [
+              "https://www.instagram.com/animator_gk/",
+              "https://www.linkedin.com/in/gopalakrishnan-r-47314a154/",
+              "https://www.youtube.com/@animatorgk",
+              "https://www.behance.net/gopalakrishnanr"
+            ]
+          }
+        })}
+      </script>
 
       {/* ================= ABOUT HERO ================= */}
 
