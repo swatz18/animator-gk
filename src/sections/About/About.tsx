@@ -38,7 +38,7 @@ function About() {
 
 
           <p className="about-description">
-            helping brands bring ideas to life through motion design, animation, 3D and editing.
+            helping brands bring ideas to life through motion design, animation, 3D and editing. Based in Coimbatore, Tamil Nadu, India.
           </p>
 
 
