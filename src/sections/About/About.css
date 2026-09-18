@@ -689,6 +689,19 @@
       rgba(139, 25, 255, 0.16)
     );
 }
+ .about-intro {
+    padding:
+      80px
+      7vw
+      90px;
+  }
+
+  .about-intro p {
+    max-width: 850px;
+
+    font-size: 16px;
+    line-height: 1.8;
+  }
 }
 
 /* =========================================================
@@ -735,6 +748,21 @@
 
   .about-portrait {
     width: 72vw;
+  }
+  .about-intro {
+    padding:
+      65px
+      25px
+      75px;
+  }
+
+  .about-intro p {
+    max-width: 100%;
+
+    font-size: 14px;
+    line-height: 1.75;
+
+    text-align: center;
   }
 }
 
@@ -884,4 +912,50 @@
   .about-portrait {
     width: 100vw;
   }
+  .about-intro {
+    padding:
+      55px
+      20px
+      65px;
+  }
+
+  .about-intro p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
+
+/* =========================================================
+   ABOUT INTRO / SERVICES SUMMARY
+   ========================================================= */
+
+.about-intro {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 95px 8vw 110px;
+
+  display: flex;
+  justify-content: center;
+
+  background: #020207;
+}
+
+.about-intro p {
+  width: 100%;
+  max-width: 1050px;
+
+  margin: 0;
+
+  text-align: center;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 18px;
+  font-weight: 300;
+
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+
+  color: rgba(255, 255, 255, 0.68);
 }
