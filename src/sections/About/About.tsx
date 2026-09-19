@@ -8,28 +8,54 @@ import WhatIBring from "./Journey/WhatIBring";
 function About() {
   return (
     <main className="about-page">
+      
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfilePage",
-          "@id": "https://animatorgk.com/about#profile",
           "url": "https://animatorgk.com/about",
           "mainEntity": {
             "@type": "Person",
             "@id": "https://animatorgk.com/about#person",
-            "name": "Gopalakrishnan",
-            "alternateName": "Animator GK",
-            "jobTitle": "Freelance 3D Artist and Motion Designer",
-            "description": "Freelance 3D Artist, Motion Designer and Explainer Video Artist based in Coimbatore, Tamil Nadu, India.",
-            "url": "https://animatorgk.com/about",
+            "name": "Animator GK",
+            "url": "https://animatorgk.com/",
+            "jobTitle": [
+              "3D Artist",
+              "Motion Designer",
+              "Explainer Video Artist",
+              "Video Editor"
+            ],
+            "description": "Animator GK is a freelance Explainer Video Artist, Motion Designer, 3D Artist and Video Editor based in Coimbatore, India. Creating 2D/3D explainer videos, motion graphics, kinetic typography, character animation, product animations, UI/UX animations, video editing, VFX, sound design, 3D product visualisation, architectural visualisation, interior visualisation, house elevation design and end-to-end 3D production.",
             "sameAs": [
               "https://www.instagram.com/animator_gk/",
               "https://www.linkedin.com/in/gopalakrishnan-r-47314a154/",
               "https://www.youtube.com/@animatorgk",
               "https://www.behance.net/gopalakrishnanr"
+            ],
+            "knowsAbout": [
+              "3D Art",
+              "Motion Design",
+              "Explainer Videos",
+              "Motion Graphics",
+              "Kinetic Typography",
+              "Character Animation",
+              "Product Animation",
+              "UI/UX Animation",
+              "Video Editing",
+              "Visual Effects",
+              "Sound Design",
+              "3D Product Visualisation",
+              "Architectural Visualisation",
+              "Interior Visualisation",
+              "House Elevation Design",
+              "3D Modelling",
+              "Texturing",
+              "Lighting",
+              "Animation",
+              "Rendering"
             ]
           }
-        })}
+        }, null, 2)}
       </script>
 
       {/* ================= ABOUT HERO ================= */}
