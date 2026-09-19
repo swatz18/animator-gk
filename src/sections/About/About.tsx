@@ -4,8 +4,13 @@ import JourneyOne from "./Journey/JourneyOne";
 import JourneyThree from "./Journey/JourneyThree";
 import JourneyTwo from "./Journey/JourneyTwo";
 import WhatIBring from "./Journey/WhatIBring";
+import usePageSEO from "../../hooks/usePageSEO";
 
 function About() {
+  usePageSEO(
+  "About Animator GK | Freelance 3D Artist in Coimbatore",
+  "Meet Animator GK, a freelance 3D artist, motion designer and explainer video artist based in Coimbatore, Tamil Nadu, India. Explore my animation, motion graphics, product visualization and ArchViz services."
+);
   return (
     <main className="about-page">
       

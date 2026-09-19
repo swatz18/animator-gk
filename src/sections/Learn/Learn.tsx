@@ -1,14 +1,15 @@
 import { learnData } from "./LearnData";
 import "./Learn.css";
-import Header from "../../components/Header/Header";
+import usePageSEO from "../../hooks/usePageSEO";
 
 function Learn() {
+  usePageSEO(
+  "Learn Animation in Tamil | Animator GK",
+  "Learn animation and creative techniques in Tamil with Animator GK. Explore educational content about 2D and 3D animation, motion graphics and related creative skills."
+);
   return (
     <section className="learn-page">
-        <Header />
-      
-
-
+       
       {/* =========================================
           MAIN CONTENT
       ========================================= */}

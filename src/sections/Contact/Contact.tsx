@@ -2,8 +2,13 @@
 import "./Contact.css";
 
 import { contactData } from "./ContactData";
+import usePageSEO from "../../hooks/usePageSEO";
 
 function Contact() {
+  usePageSEO(
+  "Contact Animator GK | Freelance 3D Artist in Coimbatore",
+  "Contact Animator GK, a freelance 3D artist and motion designer based in Coimbatore, Tamil Nadu, India. Get in touch for 3D animation, explainer videos, motion graphics, ArchViz and creative projects."
+);
   return (
     <section className="contact-page">
 

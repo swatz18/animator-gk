@@ -1,5 +1,10 @@
 import "./Work.css"
+import usePageSEO from "../../hooks/usePageSEO";
 function Work() {
+  usePageSEO(
+  "Animation Portfolio | 3D Artist & Motion Designer | Animator GK",
+  "Explore the animation portfolio of Animator GK, a freelance 3D artist and motion designer in Coimbatore, India. Discover explainer videos, motion graphics, 3D animation, product visualization and creative work."
+);
   return (
     <main className="work-page">
     
