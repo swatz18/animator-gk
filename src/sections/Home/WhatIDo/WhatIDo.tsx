@@ -57,56 +57,6 @@ function WhatIDo() {
   useState(0)
 
 
-
-  /* =========================================================
-     RESPONSIVE CARD COUNT
-  ========================================================= */
-
-  useEffect(() => {
-
-    const updateCardsToShow = () => {
-
-      if (window.innerWidth <= 599) {
-
-        setCardsToShow(1)
-
-      } else if (window.innerWidth <= 899) {
-
-        setCardsToShow(2)
-
-      } else if (window.innerWidth <= 1199) {
-
-        setCardsToShow(3)
-
-      } else {
-
-        setCardsToShow(4)
-
-      }
-
-    }
-
-
-    updateCardsToShow()
-
-    window.addEventListener(
-      "resize",
-      updateCardsToShow
-    )
-
-
-    return () => {
-
-      window.removeEventListener(
-        "resize",
-        updateCardsToShow
-      )
-
-    }
-
-  }, [])
-
-
   /* =========================================================
      DESKTOP NEXT
   ========================================================= */
@@ -119,7 +69,6 @@ function WhatIDo() {
 
   setActiveIndex(nextIndex);
 };
-
 
   /* =========================================================
      DESKTOP PREVIOUS
