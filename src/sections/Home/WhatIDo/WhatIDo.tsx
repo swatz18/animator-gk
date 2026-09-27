@@ -112,77 +112,17 @@ function WhatIDo() {
 
 
   /* =========================================================
-     DESKTOP RANGE
-  ========================================================= */
-
-  useEffect(() => {
-
-  /*
-    Mobile has its own independent track.
-
-    Do not let the desktop startIndex logic
-    interfere with the mobile active dot.
-  */
-
-  if (cardsToShow === 1) {
-    return
-  }
-
-
-  const maxStartIndex =
-    Math.max(
-      0,
-      whatIDoData.length - cardsToShow
-    )
-
-
-  if (startIndex > maxStartIndex) {
-
-    setStartIndex(0)
-
-  }
-
-
-  if (
-    activeIndex < startIndex ||
-    activeIndex >=
-      startIndex + cardsToShow
-  ) {
-
-    setActiveIndex(startIndex)
-
-  }
-
-}, [
-  cardsToShow,
-  startIndex,
-  activeIndex,
-])
-
-
-  /* =========================================================
      DESKTOP NEXT
   ========================================================= */
 
   const nextSlide = () => {
+  const nextIndex =
+    activeIndex + 1 >= dataLength
+      ? 0
+      : activeIndex + 1;
 
-    const next =
-      activeIndex ===
-      dataLength - 1
-        ? 0
-        : activeIndex + 1
-
-
-    setActiveIndex(next)
-
-
-    setStartIndex((current) =>
-      current === dataLength - 1
-        ? 0
-        : current + 1
-    )
-
-  }
+  setActiveIndex(nextIndex);
+};
 
 
   /* =========================================================
@@ -190,23 +130,13 @@ function WhatIDo() {
   ========================================================= */
 
   const previousSlide = () => {
+  const previousIndex =
+    activeIndex - 1 < 0
+      ? dataLength - 1
+      : activeIndex - 1;
 
-    const previous =
-      activeIndex === 0
-        ? dataLength - 1
-        : activeIndex - 1
-
-
-    setActiveIndex(previous)
-
-
-    setStartIndex((current) =>
-      current === 0
-        ? dataLength - 1
-        : current - 1
-    )
-
-  }
+  setActiveIndex(previousIndex);
+};
 
 
   /* =========================================================
