@@ -318,7 +318,7 @@ function Work() {
           </p>
 
           <h1 className="work-page__title">
-            IDEAS BOUGHT TO LIFE.
+            IDEAS BROUGHT TO LIFE.
           </h1>
 
           <p className="work-page__description">
