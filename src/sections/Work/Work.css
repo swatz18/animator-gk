@@ -5,8 +5,7 @@
 .work-page {
   position: relative;
   width: 100%;
-  min-height: calc(100vh - 1px);
-
+  min-height: 100vh;
   overflow: hidden;
 
   background: #050507;
@@ -25,274 +24,487 @@
   z-index: 2;
 
   width: 100%;
-  max-width: 1600px;
+  max-width: 1500px;
 
   margin: 0 auto;
 
   padding:
-    clamp(140px, 12vw, 190px)
-    clamp(25px, 6.4vw, 105px)
-    clamp(80px, 9vw, 130px);
+    clamp(120px, 9vw, 145px)
+    clamp(25px, 5vw, 70px)
+    90px;
 
   box-sizing: border-box;
 }
 
 
 /* =========================================================
-   TITLE
+   HERO
 ========================================================= */
 
-.work-page__title {
-  margin: 0;
+.work-page__header {
+  max-width: 800px;
+}
 
-  display: flex;
-  flex-direction: column;
+.work-page__eyebrow {
+  margin: 0 0 12px;
 
-  font-family: inherit;
+  color: #a21cff;
 
-  /*
-    Slightly smaller scaling so the text
-    never gets clipped on tablets/phones.
-  */
-  font-size: clamp(54px, 7.8vw, 140px);
+  font-size: 10px;
+  font-weight: 700;
 
-  line-height: 0.95;
-
-  letter-spacing: -0.055em;
-
-  font-weight: 900;
+  letter-spacing: 0.22em;
 
   text-transform: uppercase;
 }
 
-.work-page__title span {
-  display: block;
-
-  /*
-    Prevent glyphs from visually touching
-    the container edge.
-  */
-  padding-bottom: 3px;
-}
-
-.work-page__title-purple {
-  color: #7c18ff;
-
-  background: linear-gradient(
-    90deg,
-    #7317ff 0%,
-    #9c27ff 50%,
-    #7017ff 100%
-  );
-
-  -webkit-background-clip: text;
-  background-clip: text;
-
-  -webkit-text-fill-color: transparent;
-
-  text-shadow:
-    0 0 25px rgba(126, 24, 255, 0.18);
-}
-
-
-/* =========================================================
-   ACCENT LINE
-========================================================= */
-
-.work-page__line {
-  width: 60px;
-  height: 2px;
-
-  margin-top: clamp(25px, 2.5vw, 34px);
-  margin-bottom: clamp(20px, 2vw, 28px);
-
-  background: #a21cff;
-
-  box-shadow:
-    0 0 8px rgba(162, 28, 255, 0.45);
-}
-
-
-/* =========================================================
-   MESSAGE
-========================================================= */
-
-.work-page__message {
+.work-page__title {
   margin: 0;
 
-  max-width: 900px;
-
-  font-size: clamp(25px, 2.5vw, 46px);
-
-  line-height: 1.2;
-
-  font-weight: 400;
-
-  letter-spacing: -0.025em;
-}
-
-.work-page__message span {
-  color: #a21cff;
-
-  margin-left: 7px;
-
-  display: inline-block;
-
-  text-shadow:
-    0 0 12px rgba(162, 28, 255, 0.45);
-}
-
-
-/* =========================================================
-   DESCRIPTION
-========================================================= */
-
-.work-page__description {
-  margin:
-    clamp(12px, 1.2vw, 18px)
-    0
-    0;
-
-  max-width: 620px;
-
-  color: rgba(255, 255, 255, 0.62);
-
-  font-size: clamp(14px, 1vw, 18px);
-
-  line-height: 1.55;
-
-  letter-spacing: 0.01em;
-}
-
-
-/* =========================================================
-   BEHANCE BUTTON
-========================================================= */
-
-.work-page__button {
-  display: inline-flex;
-  align-items: center;
-
-  align-self: flex-start;
-
-  max-width: 100%;
-
-  min-height: 62px;
-
-  margin-top: clamp(28px, 3vw, 40px);
-
-  padding:
-    0
-    21px;
-
-  box-sizing: border-box;
-
-  border: 1px solid #a21cff;
-
-  border-radius: 4px;
-
-  color: #ffffff;
-
-  text-decoration: none;
-
-  background: transparent;
-
-  transition:
-    background 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
-}
-
-.work-page__button:hover {
-  background: rgba(162, 28, 255, 0.08);
-
-  box-shadow:
-    0 0 20px rgba(162, 28, 255, 0.15);
-
-  transform: translateY(-2px);
-}
-
-
-/* =========================================================
-   BEHANCE LOGO
-========================================================= */
-
-.work-page__behance {
-  flex-shrink: 0;
-
-  min-width: 55px;
-
-  color: #a21cff;
-
-  font-size: 26px;
+  font-size: clamp(34px, 4vw, 58px);
 
   line-height: 1;
 
   font-weight: 800;
 
-  letter-spacing: -0.08em;
+  letter-spacing: -0.045em;
+}
+
+.work-page__description {
+  max-width: 500px;
+
+  margin: 14px 0 0;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: clamp(13px, 1vw, 16px);
+
+  line-height: 1.5;
 }
 
 
 /* =========================================================
-   DIVIDER
+   CATEGORY PILLS
 ========================================================= */
 
-.work-page__divider {
-  width: 1px;
-  height: 29px;
+.work-page__categories {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 
-  flex-shrink: 0;
+  gap: 11px;
+  
 
-  margin:
-    0
-    19px;
+  margin-top: clamp(35px, 4vw, 50px);
+  margin-bottom: clamp(30px, 3.5vw, 42px);
+}
+
+.work-page__category {
+  appearance: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  border-radius: 999px;
+
+  padding: 11px 22px;
+
+  background: transparent;
+
+  color: rgba(255, 255, 255, 0.58);
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.work-page__category:hover {
+  color: #ffffff;
+
+  border-color: rgba(162, 28, 255, 0.7);
+
+  transform: translateY(-2px);
+}
+
+.work-page__category--active {
+  color: #ffffff;
 
   background: #a21cff;
+
+  border-color: #a21cff;
+
+  box-shadow:
+    0 0 20px rgba(162, 28, 255, 0.2);
 }
 
 
 /* =========================================================
-   BUTTON TEXT
+   WORK SECTIONS
 ========================================================= */
 
-.work-page__button-text {
-  font-size: 12px;
+.work-page__section {
+  width: 100%;
+}
+
+.work-page__section--longform {
+  margin-top: clamp(45px, 6vw, 70px);
+}
+
+.work-page__section-label {
+  margin: 0 0 18px;
+
+  color: rgba(255, 255, 255, 0.42);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SHORTS GRID
+========================================================= */
+
+.work-page__shorts-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap:
+    clamp(14px, 1.5vw, 22px);
+}
+
+
+/* =========================================================
+   LONG FORM GRID
+========================================================= */
+
+.work-page__longform-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    clamp(18px, 2vw, 30px);
+}
+
+
+/* =========================================================
+   WORK CARD
+========================================================= */
+
+.work-card {
+  min-width: 0;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 12px;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(162, 28, 255, 0.4);
+
+  box-shadow:
+    0 15px 35px
+    rgba(0, 0, 0, 0.38),
+
+    0 0 25px
+    rgba(126, 24, 255, 0.07);
+}
+
+
+/* =========================================================
+   VIDEO PREVIEW
+========================================================= */
+
+.work-card__video {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  background: #0a0a0d;
+
+  cursor: pointer;
+}
+
+
+/* SHORTS = 9:16 */
+
+.work-card__video--vertical {
+  aspect-ratio: 9 / 16;
+}
+
+
+/* LONG FORM = 16:9 */
+
+.work-card__video--landscape {
+  aspect-ratio: 16 / 9;
+}
+
+
+.work-card__video img {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition:
+    transform 0.5s ease;
+}
+
+.work-card__video iframe {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+
+  display: block;
+}
+
+.work-card__video:has(iframe) {
+  cursor: default;
+}
+
+.work-card__video:has(iframe)
+.work-card__overlay,
+.work-card__video:has(iframe)
+.work-card__play,
+.work-card__video:has(iframe)
+.work-card__number {
+  display: none;
+}
+
+
+/* =========================================================
+   VIDEO OVERLAY
+========================================================= */
+
+.work-card__overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.02) 35%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+
+  pointer-events: none;
+
+  transition:
+    background 0.3s ease;
+}
+
+.work-card:hover
+.work-card__overlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(126, 24, 255, 0.06),
+      rgba(0, 0, 0, 0.52)
+    );
+}
+
+
+/* =========================================================
+   PLAY BUTTON
+========================================================= */
+
+.work-card__play {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transform:
+    translate(-50%, -50%);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.45);
+
+  border-radius: 50%;
+
+  background:
+    rgba(5, 5, 7, 0.48);
+
+  backdrop-filter:
+    blur(8px);
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  padding-left: 2px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.work-card:hover
+.work-card__play {
+  transform:
+    translate(-50%, -50%)
+    scale(1.1);
+
+  background:
+    #a21cff;
+
+  border-color:
+    #a21cff;
+
+  box-shadow:
+    0 0 25px
+    rgba(162, 28, 255, 0.35);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.work-card__number {
+  position: absolute;
+
+  top: 12px;
+  right: 12px;
+
+  color:
+    rgba(255, 255, 255, 0.75);
+
+  font-size: 9px;
 
   font-weight: 700;
 
-  letter-spacing: 0.13em;
-
-  white-space: nowrap;
+  letter-spacing: 0.12em;
 }
 
 
 /* =========================================================
-   ARROW
+   EMPTY STATE
 ========================================================= */
 
-.work-page__arrow {
-  flex-shrink: 0;
+.work-page__empty {
+  min-height: 300px;
 
-  margin-left: 24px;
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding:
+    30px 0;
+}
+
+.work-page__empty-number {
+  margin-bottom: 14px;
 
   color: #a21cff;
 
-  font-size: 29px;
+  font-size: 10px;
 
-  line-height: 1;
+  font-weight: 700;
 
-  transition:
-    transform 0.25s ease;
+  letter-spacing: 0.2em;
 }
 
-.work-page__button:hover .work-page__arrow {
-  transform: translateX(5px);
+.work-page__empty h2 {
+  margin: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  font-size:
+    clamp(32px, 4vw, 55px);
+
+  line-height: 0.95;
+
+  letter-spacing: -0.045em;
+}
+
+.work-page__empty h2 span {
+  color: #a21cff;
+}
+
+.work-page__empty p {
+  max-width: 380px;
+
+  margin:
+    18px 0 0;
+
+  color:
+    rgba(255, 255, 255, 0.5);
+
+  font-size: 13px;
+
+  line-height: 1.6;
 }
 
 
 /* =========================================================
-   PURPLE AMBIENT GLOW
+   AMBIENT PURPLE GLOW
 ========================================================= */
 
 .work-page__glow {
@@ -300,24 +512,24 @@
 
   z-index: 1;
 
-  right: -8%;
-  bottom: -35%;
+  right: -10%;
+  bottom: -25%;
 
-  width: clamp(350px, 42vw, 650px);
-  height: clamp(350px, 42vw, 650px);
+  width: clamp(400px, 45vw, 680px);
+  height: clamp(400px, 45vw, 680px);
 
   border-radius: 50%;
 
   background:
     radial-gradient(
       circle,
-      rgba(112, 18, 255, 0.48) 0%,
-      rgba(112, 18, 255, 0.22) 28%,
-      rgba(112, 18, 255, 0.07) 50%,
+      rgba(112, 18, 255, 0.52) 0%,
+      rgba(112, 18, 255, 0.24) 30%,
+      rgba(112, 18, 255, 0.09) 52%,
       transparent 72%
     );
 
-  filter: blur(25px);
+  filter: blur(32px);
 
   pointer-events: none;
 }
@@ -327,47 +539,37 @@
    TABLET
 ========================================================= */
 
-@media (min-width: 600px) and (max-width: 1199px) {
-
-  .work-page {
-    min-height: auto;
-  }
+@media
+  (min-width: 600px)
+  and (max-width: 1100px) {
 
   .work-page__content {
     padding:
-      145px
-      clamp(35px, 7vw, 75px)
-      90px;
+      135px
+      clamp(30px, 6vw, 60px)
+      80px;
   }
+
+
+  /* Shorts */
+
+  .work-page__shorts-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+
+  /* Long form */
+
+  .work-page__longform-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
 
   .work-page__title {
-    font-size: clamp(62px, 10vw, 105px);
-
-    line-height: 0.96;
-  }
-
-  .work-page__message {
-    font-size: clamp(27px, 3.5vw, 40px);
-  }
-
-  .work-page__description {
-    max-width: 560px;
-
-    font-size: 16px;
-  }
-
-  .work-page__button {
-    min-height: 60px;
-
-    margin-top: 32px;
-  }
-
-  .work-page__glow {
-    right: -22%;
-    bottom: -25%;
-
-    width: 500px;
-    height: 500px;
+    font-size:
+      clamp(38px, 6vw, 52px);
   }
 }
 
@@ -380,196 +582,123 @@
 
   .work-page {
     min-height: auto;
-
-    overflow: hidden;
   }
 
 
-  /* -------------------------------------------------------
-     CONTENT
-  ------------------------------------------------------- */
-
   .work-page__content {
     padding:
-      120px
-      24px
+      110px
+      20px
       65px;
   }
 
 
-  /* -------------------------------------------------------
-     TITLE
-  ------------------------------------------------------- */
+  /* HERO */
+
+  .work-page__eyebrow {
+    margin-bottom: 10px;
+
+    font-size: 9px;
+  }
 
   .work-page__title {
-    font-size: clamp(
-      47px,
-      14.8vw,
-      76px
-    );
+    font-size: 36px;
 
-    line-height: 0.96;
-
-    letter-spacing: -0.055em;
+    line-height: 1;
   }
-
-  .work-page__title span {
-    padding-bottom: 2px;
-  }
-
-
-  /* -------------------------------------------------------
-     LINE
-  ------------------------------------------------------- */
-
-  .work-page__line {
-    width: 47px;
-    height: 2px;
-
-    margin-top: 23px;
-    margin-bottom: 20px;
-  }
-
-
-  /* -------------------------------------------------------
-     MESSAGE
-  ------------------------------------------------------- */
-
-  .work-page__message {
-    max-width: 100%;
-
-    font-size: clamp(
-      23px,
-      6.9vw,
-      32px
-    );
-
-    line-height: 1.2;
-  }
-
-  .work-page__message span {
-    margin-left: 5px;
-  }
-
-
-  /* -------------------------------------------------------
-     DESCRIPTION
-  ------------------------------------------------------- */
 
   .work-page__description {
-    max-width: 340px;
+    max-width: 330px;
 
     margin-top: 12px;
 
-    font-size: 14px;
-
-    line-height: 1.5;
+    font-size: 13px;
   }
 
 
-  /* -------------------------------------------------------
-     BUTTON
-  ------------------------------------------------------- */
+  /* PILLS */
 
-  .work-page__button {
-    min-height: 56px;
+  .work-page__categories {
+    flex-wrap: nowrap;
 
-    margin-top: 28px;
+    overflow-x: auto;
+
+    gap: 7px;
+
+    margin-top: 32px;
+
+    margin-bottom: 25px;
+
+    padding-bottom: 4px;
+
+    scrollbar-width: none;
+
+    scroll-behavior: smooth;
+  }
+
+  .work-page__categories::-webkit-scrollbar {
+    display: none;
+  }
+
+  .work-page__category {
+    flex-shrink: 0;
 
     padding:
-      0
+      9px
       14px;
+
+    font-size: 8px;
   }
 
 
-  .work-page__behance {
-    min-width: 40px;
+  /* SECTION LABEL */
 
-    font-size: 22px;
+  .work-page__section-label {
+    margin-bottom: 14px;
+
+    font-size: 9px;
   }
 
 
-  .work-page__divider {
-    height: 25px;
+  /* SHORTS */
 
-    margin:
-      0
-      11px;
+  .work-page__shorts-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
   }
 
 
-  .work-page__button-text {
-    font-size: 8.5px;
+  /* LONG FORM */
 
-    letter-spacing: 0.085em;
+  .work-page__section--longform {
+    margin-top: 42px;
+  }
+
+  .work-page__longform-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
   }
 
 
-  .work-page__arrow {
-    margin-left: 12px;
-
-    font-size: 24px;
+  .work-card {
+    border-radius: 11px;
   }
 
 
-  /* -------------------------------------------------------
-     GLOW
-  ------------------------------------------------------- */
+  /* GLOW */
 
   .work-page__glow {
     right: -48%;
-    bottom: -25%;
+    bottom: -12%;
 
-    width: 390px;
-    height: 390px;
+    width: 380px;
+    height: 380px;
 
-    opacity: 0.7;
+    opacity: 0.65;
 
     filter: blur(30px);
-  }
-}
-
-
-/* =========================================================
-   SHORT MOBILE SCREENS
-========================================================= */
-
-@media (max-width: 599px) and (max-height: 700px) {
-
-  .work-page__content {
-    padding-top: 105px;
-    padding-bottom: 55px;
-  }
-
-  .work-page__title {
-    font-size: clamp(
-      44px,
-      14.2vw,
-      65px
-    );
-  }
-
-  .work-page__line {
-    margin-top: 19px;
-    margin-bottom: 17px;
-  }
-
-  .work-page__message {
-    font-size: clamp(
-      21px,
-      6.5vw,
-      28px
-    );
-  }
-
-  .work-page__description {
-    margin-top: 9px;
-
-    font-size: 13.5px;
-  }
-
-  .work-page__button {
-    margin-top: 22px;
   }
 }
 
@@ -581,59 +710,18 @@
 @media (max-width: 370px) {
 
   .work-page__content {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
   .work-page__title {
-    font-size: clamp(
-      42px,
-      14.2vw,
-      55px
-    );
-
-    line-height: 0.98;
+    font-size: 33px;
   }
 
-  .work-page__message {
-    font-size: 21px;
-  }
-
-  .work-page__description {
-    max-width: 295px;
-
-    font-size: 13px;
-  }
-
-  .work-page__button {
-    min-height: 53px;
-
+  .work-page__category {
     padding:
-      0
-      10px;
-  }
-
-  .work-page__behance {
-    min-width: 36px;
-
-    font-size: 20px;
-  }
-
-  .work-page__divider {
-    margin-left: 8px;
-    margin-right: 8px;
-  }
-
-  .work-page__button-text {
-    font-size: 7.5px;
-
-    letter-spacing: 0.065em;
-  }
-
-  .work-page__arrow {
-    margin-left: 8px;
-
-    font-size: 22px;
+      8px
+      13px;
   }
 }
 
@@ -644,8 +732,10 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-  .work-page__button,
-  .work-page__arrow {
+  .work-page__category,
+  .work-card,
+  .work-card__video img,
+  .work-card__play {
     transition: none;
   }
 
