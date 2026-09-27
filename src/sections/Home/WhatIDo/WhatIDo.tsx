@@ -16,10 +16,6 @@ function WhatIDo() {
 
   const [activeIndex, setActiveIndex] = useState(0)
 
-  const [startIndex, setStartIndex] = useState(0)
-
-  const [cardsToShow, setCardsToShow] = useState(4)
-
   const touchStartX = useRef<number>(0)
   const touchStartY = useRef<number>(0)
   const touchDirection = useRef<"horizontal" | "vertical" | null>(null)
