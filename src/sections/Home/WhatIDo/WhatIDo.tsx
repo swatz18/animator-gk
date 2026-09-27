@@ -1,7 +1,6 @@
 import "./WhatIDo.css"
 import { whatIDoData } from "./whatIDoData"
 import {
-  useEffect,
   useRef,
   useState,
 } from "react"
@@ -312,9 +311,6 @@ function WhatIDo() {
         nextActiveIndex
       )
 
-      setStartIndex(
-        nextActiveIndex
-      )
 
       setMobileOffset(0)
 
@@ -397,10 +393,6 @@ function WhatIDo() {
     )
 
     setActiveIndex(
-      previousActiveIndex
-    )
-
-    setStartIndex(
       previousActiveIndex
     )
 
@@ -812,7 +804,6 @@ function WhatIDo() {
 
                 setActiveIndex(index)
 
-                setStartIndex(index)
 
 
                 /*
