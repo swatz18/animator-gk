@@ -1,0 +1,254 @@
+/* Full-viewport long-form section styled to match the supplied reference. */
+
+.long-form {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 420px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 58px clamp(16px, 3.2vw, 48px) 50px;
+  color: #fff;
+  background: #050509;
+  border-radius: 8px;
+}
+
+.long-form__eyebrow {
+  position: absolute;
+  top: 20px;
+  left: clamp(14px, 1.6vw, 24px);
+  z-index: 2;
+  margin: 0;
+  color: #b75cff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.long-form__stage {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) 28px;
+  align-items: center;
+  gap: clamp(12px, 2vw, 28px);
+  width: 100%;
+  max-width: 1400px;
+  min-width: 0;
+}
+
+.long-form__player {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-width: 0;
+  overflow: hidden;
+  background: #17171f;
+  border-radius: 7px;
+}
+
+.long-form__player iframe,
+.long-form__thumbnail,
+.long-form__thumbnail img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.long-form__player iframe {
+  border: 0;
+}
+
+.long-form__thumbnail {
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: #17171f;
+  cursor: pointer;
+}
+
+.long-form__thumbnail img {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 400ms ease;
+}
+
+.long-form__thumbnail:hover img {
+  transform: scale(1.015);
+}
+
+.long-form__thumbnail-shade {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+}
+
+.long-form__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  padding-left: 2px;
+  color: #17171f;
+  font-size: 11px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.long-form__arrow {
+  display: grid;
+  width: 28px;
+  height: 42px;
+  place-items: center;
+  padding: 0;
+  color: #bd42ff;
+  font: inherit;
+  font-size: 24px;
+  line-height: 1;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.long-form__arrow:hover {
+  color: #fff;
+  transform: scale(1.12);
+}
+
+.long-form__arrow:focus-visible,
+.long-form__thumbnail:focus-visible {
+  outline: 2px solid #00dfff;
+  outline-offset: 4px;
+}
+
+.long-form__counter {
+  position: absolute;
+  bottom: 15px;
+  left: clamp(14px, 1.6vw, 24px);
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.long-form__counter span {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* Scale the 16:9 player to fit the available viewport height. */
+@media (min-width: 641px) {
+  .long-form__stage {
+    width: min(100%, calc((100svh - 110px) * 16 / 9 + 112px));
+  }
+
+  .long-form__player {
+    max-height: calc(100svh - 110px);
+  }
+}
+
+@media (max-width: 640px) {
+  .long-form {
+    min-height: 0;
+    height: auto;
+    display: block;
+    padding: 42px 12px 28px;
+    border-radius: 0;
+  }
+
+  .long-form__eyebrow {
+    top: 14px;
+    left: 14px;
+    font-size: 14px;
+  }
+
+  /* Give the landscape video nearly the full available phone width.
+     The arrows sit over the sides instead of taking width away from the frame. */
+  .long-form__stage {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    display: block;
+    width: 100%;
+    margin-top: 22px;
+    transform: none;
+  }
+
+  .long-form__player {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 5px;
+  }
+
+  .long-form__arrow {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    width: 28px;
+    height: 38px;
+    color: #fff;
+    font-size: 21px;
+    background: rgba(5, 5, 9, 0.58);
+    border-radius: 5px;
+    transform: translateY(-50%);
+  }
+
+  .long-form__arrow:hover {
+    transform: translateY(-50%);
+  }
+
+  .long-form__arrow--left {
+    left: -5px;
+  }
+
+  .long-form__arrow--right {
+    right: -5px;
+  }
+
+  .long-form__counter {
+    position: static;
+    margin: 6px 2px 0;
+    font-size: 12px;
+  }
+}
+@media (max-height: 480px) and (min-width: 641px) {
+  .long-form {
+    min-height: 0;
+    padding-top: 38px;
+    padding-bottom: 38px;
+  }
+
+  .long-form__eyebrow {
+    top: 10px;
+    font-size: 13px;
+  }
+
+  .long-form__counter {
+    bottom: 8px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .long-form *,
+  .long-form *::before,
+  .long-form *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+

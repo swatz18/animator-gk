@@ -58,7 +58,7 @@ const Testimonial: React.FC = () => {
         <div className="testimonial-header">
 
           <div className="section-number">
-            03
+            04
           </div>
 
           <div className="testimonial-heading">
