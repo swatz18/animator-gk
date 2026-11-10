@@ -18,6 +18,16 @@ const videos: LongFormVideo[] = [
     title: "3D Product Animation",
     category: "Selected Work",
   },
+  {
+    id: "XzkT6I7xp0s",
+    title: "3D Elevation Design",
+    category: "Architectural Visualization",
+  },
+  {
+    id: "8fecVO7QVgs",
+    title: "3D Interior Design",
+    category: "Architectural Visualization",
+  },
 ];
 
 function LongForm() {
