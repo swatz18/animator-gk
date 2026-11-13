@@ -1,6 +1,7 @@
 import { learnData } from "./LearnData";
 import "./Learn.css";
 import usePageSEO from "../../hooks/usePageSEO";
+import FeaturedTutorials from "./FeaturedTutorials/FeaturedTutorials";
 
 function Learn() {
   usePageSEO(
@@ -104,7 +105,7 @@ function Learn() {
         </div>
 
       </div>
-
+      <FeaturedTutorials />
     </section>
   );
 }
