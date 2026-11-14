@@ -2,6 +2,7 @@ import { learnData } from "./LearnData";
 import "./Learn.css";
 import usePageSEO from "../../hooks/usePageSEO";
 import FeaturedTutorials from "./FeaturedTutorials/FeaturedTutorials";
+import LongFormGrid from "./LongFormGrid/LongFormGrid";
 
 function Learn() {
   usePageSEO(
@@ -106,6 +107,7 @@ function Learn() {
 
       </div>
       <FeaturedTutorials />
+      <LongFormGrid />
     </section>
   );
 }
