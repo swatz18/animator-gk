@@ -28,6 +28,26 @@ const videos: LongFormVideo[] = [
     title: " I Tried an AI-Coded After Effects Alternative | Effect Craft | Animator GK",
     category: "Motion Graphics",
   },
+  {
+    id: "ELWHiqNsQV0",
+    title: "How to Turn Your Projects into a Behance Portfolio | 6-Step Tamil Tutorial for Motion Designers",
+    category: "Portfolio",
+  },
+  {
+    id: "eE1_Czaju1g",
+    title: "Our Trip Into a Video Game style 3D Animation | Behance Portfolio | Tamil | Animator GK",
+    category: "Portfolio",
+  },
+  {
+    id: "z-zH1NTFYGc",
+    title: "PC building tips every beginner should know | How to build a PC on your own ? | Tamil | Animator GK",
+    category: "Career",
+  },
+  {
+    id: "SjlwB4624p8",
+    title: "Create Talking Head Reel Layouts in After Effects for beginners | Tamil | Animator GK",
+    category: "Editing",
+  },
 ];
 
 function FeaturedTutorials() {
