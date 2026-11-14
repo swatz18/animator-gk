@@ -1,8 +1,10 @@
 export const learnData = {
   categories: [
     "3D",
-    "ANIMATION",
-    "MOTION DESIGN",
+    "MOTION GRAPHICS",
+    "EDITING",
+    "PORTFOLIO",
+    "CAREER"
   ],
 
   youtubeUrl: "https://www.youtube.com/@animatorgk",
