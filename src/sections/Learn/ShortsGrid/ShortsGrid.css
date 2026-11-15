@@ -1,0 +1,289 @@
+
+/* =========================================================
+   LEARN SHORTS SECTION
+========================================================= */
+
+.learn-shorts {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+  padding: 0 clamp(25px, 5vw, 70px) 80px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
+.learn-shorts__label {
+  margin: 0 0 18px;
+
+  color: rgba(255, 255, 255, 0.42);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   SHORTS GRID
+========================================================= */
+
+.learn-shorts__grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: clamp(14px, 1.5vw, 22px);
+
+  width: 100%;
+}
+
+/* =========================================================
+   VIDEO CARD
+========================================================= */
+
+.learn-shorts__card {
+  min-width: 0;
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.learn-shorts__card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(162, 28, 255, 0.4);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.38),
+    0 0 25px rgba(126, 24, 255, 0.07);
+}
+
+/* =========================================================
+   VIDEO PREVIEW
+========================================================= */
+
+.learn-shorts__video {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 9 / 16;
+
+  overflow: hidden;
+
+  background: #0a0a0d;
+
+  cursor: pointer;
+}
+
+.learn-shorts__video img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  display: block;
+
+  transition: transform 0.5s ease;
+}
+
+.learn-shorts__card:hover .learn-shorts__video img {
+  transform: scale(1.04);
+}
+
+.learn-shorts__video iframe {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+  display: block;
+}
+
+/* =========================================================
+   VIDEO OVERLAY
+========================================================= */
+
+.learn-shorts__overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.02) 35%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+
+  pointer-events: none;
+
+  transition: background 0.3s ease;
+}
+
+.learn-shorts__card:hover .learn-shorts__overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(126, 24, 255, 0.06),
+    rgba(0, 0, 0, 0.52)
+  );
+}
+
+/* =========================================================
+   PLAY BUTTON
+========================================================= */
+
+.learn-shorts__play {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+
+  background: rgba(5, 5, 7, 0.48);
+  backdrop-filter: blur(8px);
+
+  color: #ffffff;
+  font-size: 11px;
+
+  padding-left: 2px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.learn-shorts__card:hover .learn-shorts__play {
+  transform: translate(-50%, -50%) scale(1.1);
+
+  background: #a21cff;
+  border-color: #a21cff;
+
+  box-shadow: 0 0 25px rgba(162, 28, 255, 0.35);
+}
+
+/* =========================================================
+   VIDEO NUMBER
+========================================================= */
+
+.learn-shorts__number {
+  position: absolute;
+
+  top: 12px;
+  right: 12px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 600px) and (max-width: 1100px) {
+
+  .learn-shorts {
+    padding-left: clamp(30px, 6vw, 60px);
+    padding-right: clamp(30px, 6vw, 60px);
+  }
+
+  .learn-shorts__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 599px) {
+
+  .learn-shorts {
+    padding: 0 24px 60px;
+  }
+
+  .learn-shorts__label {
+    margin-bottom: 14px;
+    font-size: 9px;
+  }
+
+  .learn-shorts__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .learn-shorts__card {
+    border-radius: 11px;
+  }
+
+}
+
+/* =========================================================
+   VERY NARROW PHONES
+========================================================= */
+
+@media (max-width: 370px) {
+
+  .learn-shorts {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .learn-shorts__grid {
+    gap: 10px;
+  }
+
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .learn-shorts__card,
+  .learn-shorts__video img,
+  .learn-shorts__play,
+  .learn-shorts__overlay {
+    transition: none;
+  }
+
+}
