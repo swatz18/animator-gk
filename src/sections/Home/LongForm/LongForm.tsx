@@ -28,6 +28,11 @@ const videos: LongFormVideo[] = [
     title: "3D Interior Design",
     category: "Architectural Visualization",
   },
+  {
+    id: "ZZopxPT19KI",
+    title: "2D Kids Channel Logo Reveal Animation",
+    category: "Logo Reveal Animation",
+  },
 ];
 
 function LongForm() {
