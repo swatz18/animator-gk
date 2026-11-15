@@ -33,6 +33,11 @@ const videos: LongFormVideo[] = [
     title: "2D Kids Channel Logo Reveal Animation",
     category: "Logo Reveal Animation",
   },
+  {
+    id: "Ts8TOUWvpq0",
+    title: "Realistic Wooden Boat 3D Model ",
+    category: "3D Product Modeling",
+  },
 ];
 
 function LongForm() {
