@@ -21,9 +21,9 @@ function JourneyOne() {
             </div>
 
             <h2>
-              I STARTED
+              I STARTED WITH
               <br />
-              WITH <span>ANIMATION.</span>
+              <span>MOTIONGRAPHICS.</span>
             </h2>
 
           </div>
@@ -41,7 +41,7 @@ function JourneyOne() {
             <br />
             As an intern, I learned the basics of
             <br />
-            animation and motion, and turned my
+            animation motion and turned my
             <br />
             curiosity into a career path.
           </p>

@@ -173,15 +173,13 @@ function About() {
       <WhatIBring/>
       <section className="about-intro">
         <p>
-          Animator GK is a freelance Explainer Video Artist, Motion Designer,
-          3D Artist and Video Editor based in Coimbatore, India. I work with
-          clients across India and worldwide, creating 2D/3D explainer videos,
-          motion graphics, kinetic typography, character animation, product
-          animations, UI/UX animations, video editing, VFX and sound design.<br/>
-          I also specialise in 3D product visualisation, architectural
-          visualisation, interior visualisation, house elevation design and
-          end-to-end 3D production from modelling and texturing to lighting,
-          animation and rendering.
+          Animator GK is a freelance 3D Artist, Motion Desighner and Explainer video Artist 
+          based in Coimbatore, india, working with clients worldwide.
+          I create 3D Product visualization, Architectural visualization, Interior Renders, 3D Product launch videos, 
+          3D Furniture visualizations, House Elevation Designs, 3D Explainer videos.<br/>
+          My expertise also extends to 2D Explainer videos, Stylized explainer videos, 2D & 3D Hybrid Animation, Kinetic Typography,
+          Logo reveal animations, UI UX Animations, Social media content editing, Event video editing, 
+          Youtube video editing and Visual effects.
         </p>
       </section>
     </main>
