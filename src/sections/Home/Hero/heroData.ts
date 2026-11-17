@@ -2,50 +2,51 @@ export const heroData = {
   title: "ANIMATOR GK",
 
   roles: [
-    "3D ARTIST",
+    "3D VISUALIZATION ARTIST",
     "MOTION DESIGNER",
-    "VISUAL STORYTELLER",
+    "7+ YEARS EXPERIENCE",
+
   ],
 
   description: {
-    normal: "Turning ideas into",
-    highlighted: "engaging visual experiences.",
+    normal: "Your creative partner for",
+    highlighted: "businesses & brands.",
   },
 
   projects: [
     {
-      id: "product",
-      // label: "PRODUCT",
-      className: "card-product",
+      id: "hero1",
+      className: "card-hero1",
       image: "/images/hero/Hero Page 1.jpg",
+      alt: "Nokia 6.1 Plus 3D product visualization created by Animator GK",
     },
 
     {
-      id: "character",
-      // label: "CHARACTER",
-      className: "card-character",
+      id: "hero2",
+      className: "card-hero2",
       image: "/images/hero/Hero Page 2.jpg",
+      alt: "Animator GK custom 3D character avatar",
     },
 
     {
-      id: "robot",
-      // label: "ROBOT",
-      className: "card-robot",
+      id: "hero3",
+      className: "card-hero3",
       image: "/images/hero/Hero Page 3 v2.jpg",
+      alt: "3D boat model with wireframe topology created by Animator GK"
     },
 
     {
-      id: "environment",
-      // label: "ENVIRONMENT",
-      className: "card-environment",
+      id: "hero4",
+      className: "card-hero4",
       image: "/images/hero/Hero 5.jpg",
+      alt: "3D isometric couple workplace visualization created by Animator GK"
     },
 
     {
-      id: "industrial",
-      // label: "INDUSTRIAL",
-      className: "card-industrial",
+      id: "hero5",
+      className: "card-hero5",
       image: "/images/hero/Hero 3.jpg",
+      alt: "Teak wood bed cum sofa 3D furniture visualization by Animator GK",
     },
   ],
 };

@@ -10,33 +10,33 @@ type LongFormVideo = {
 const videos: LongFormVideo[] = [
   {
     id: "s1DClbpTCoc",
-    title: "Nokia Render",
-    category: "3D Product Animation",
+    title: "Teak Wood Sofa Cum Bed | 3D Furniture Design & Visualization",
+    category: "3D Furniture Design & Visualization",
   },
   {
     id: "dbvaEX8QU_U",
-    title: "3D Product Animation",
-    category: "Selected Work",
+    title: "3D Product visualization | Nokia 6.1 plus Phone 3D Animation made in Blender 3D | Animator GK",
+    category: "3D Product Launch Animation",
   },
   {
     id: "XzkT6I7xp0s",
-    title: "3D Elevation Design",
+    title: "Modern Tamil Nadu House Elevation Designs | 3D Architectural Visualization | Animator GK",
     category: "Architectural Visualization",
   },
   {
     id: "8fecVO7QVgs",
-    title: "3D Interior Design",
+    title: "2D Floor Plan to 3D Bathroom Design | Plan A | 3D Interior Visualization | Animator GK",
     category: "Architectural Visualization",
   },
   {
     id: "ZZopxPT19KI",
-    title: "2D Kids Channel Logo Reveal Animation",
+    title: "Little Berry - Kid's Channel Logo Animation | Animator GK | 2D Logo Reveal",
     category: "Logo Reveal Animation",
   },
   {
     id: "Ts8TOUWvpq0",
-    title: "Realistic Wooden Boat 3D Model ",
-    category: "3D Product Modeling",
+    title: "Realistic Wooden Boat 3D Model | Blender Modeling & Rendering | Animator GK",
+    category: "3D Product Modeling & Rendering",
   },
 ];
 
@@ -84,7 +84,7 @@ function LongForm() {
             >
               <img
                 src={`https://i.ytimg.com/vi/${activeVideo.id}/maxresdefault.jpg`}
-                alt=""
+                alt={`${activeVideo.title} - ${activeVideo.category} by Animator GK`}
                 loading="lazy"
                 onError={(event) => {
                   const image = event.currentTarget;

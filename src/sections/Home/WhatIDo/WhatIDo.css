@@ -359,17 +359,6 @@
 }
 
 
-/* Force first and last titles to wrap */
-
-.what-i-do__card:first-child
-.what-i-do__content h3,
-
-.what-i-do__card:last-child
-.what-i-do__content h3 {
-  max-width: 200px;
-}
-
-
 .what-i-do__content p {
   margin: 0;
 
@@ -683,12 +672,6 @@
     max-width: 270px;
 
     font-size: clamp(22px, 3.4vw, 30px);
-  }
-
-
-  .what-i-do__card:first-child .what-i-do__content h3,
-  .what-i-do__card:last-child .what-i-do__content h3 {
-    max-width: 230px;
   }
 
 

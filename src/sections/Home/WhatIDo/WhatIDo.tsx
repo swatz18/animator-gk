@@ -468,23 +468,13 @@ function WhatIDo() {
      DESKTOP CARDS
   ========================================================= */
 
-  const currentCard =
-    whatIDoData[activeIndex]
+  const previousCard = whatIDoData[activeIndex]
 
+  const currentCard =
+  whatIDoData[(activeIndex + 1) % dataLength]
 
   const nextCard =
-    whatIDoData[
-      (activeIndex + 1) %
-        dataLength
-    ]
-
-
-  const previousCard =
-    whatIDoData[
-      (activeIndex - 1 + dataLength) %
-        dataLength
-    ]
-
+  whatIDoData[(activeIndex + 2) % dataLength]
 
   /* =========================================================
      RENDER
@@ -518,11 +508,11 @@ function WhatIDo() {
 
 
             <p>
-              Turning ideas into{" "}
+              3D visualization and motion design partner {" "}
               <span>
-                engaging
+                for businesses and brands
               </span>{" "}
-              visual experiences.
+              based in Coimbatore, India. Working with clients around the world.
             </p>
 
           </div>

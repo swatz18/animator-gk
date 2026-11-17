@@ -314,7 +314,7 @@ function Work() {
         <header className="work-page__header">
 
           <p className="work-page__eyebrow">
-            MY WORK
+            SELECTED WORK
           </p>
 
           <h1 className="work-page__title">
@@ -322,8 +322,7 @@ function Work() {
           </h1>
 
           <p className="work-page__description">
-            3D, product visualization, architectural
-            visualization, animation & video.
+            Explore my work in 2D & 3D Explainers, Product Viz, Arch Viz, Motion Graphics & Video Editing.
           </p>
 
         </header>

@@ -52,29 +52,6 @@ function Hero() {
 
       </div>
 
-
-      {/* ================= BOTTOM CONTENT ================= */}
-
-      <div className="hero-bottom">
-
-        {/* <p className="hero-description">
-          {heroData.description.normal}{" "}
-          <span>
-            {heroData.description.highlighted}
-          </span>
-        </p> */}
-
-
-        {/* <div className="hero-scroll">
-          <span>Scroll to explore</span>
-
-          <div className="hero-mouse">
-            <div className="hero-mouse-wheel" />
-          </div>
-        </div> */}
-
-      </div>
-
     </section>
   );
 }
