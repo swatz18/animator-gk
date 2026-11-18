@@ -1,10 +1,16 @@
 
 import { useEffect } from "react";
 
-function usePageSEO(title: string, description: string) {
+function usePageSEO(
+  title: string,
+  description: string,
+  canonicalPath: string
+) {
   useEffect(() => {
+    // Page title
     document.title = title;
 
+    // Meta description
     let metaDescription = document.querySelector(
       'meta[name="description"]'
     ) as HTMLMetaElement | null;
@@ -16,7 +22,26 @@ function usePageSEO(title: string, description: string) {
     }
 
     metaDescription.content = description;
-  }, [title, description]);
+
+    // Canonical URL
+    let canonical = document.querySelector(
+      'link[rel="canonical"]'
+    ) as HTMLLinkElement | null;
+
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+
+    const cleanPath =
+      canonicalPath === "/"
+        ? ""
+        : `/${canonicalPath.replace(/^\/+|\/+$/g, "")}`;
+
+    canonical.href = `https://www.animatorgk.com${cleanPath}`;
+
+  }, [title, description, canonicalPath]);
 }
 
 export default usePageSEO;
