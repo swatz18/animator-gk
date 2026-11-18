@@ -6,9 +6,10 @@ import usePageSEO from "../../hooks/usePageSEO";
 
 function Contact() {
   usePageSEO(
-  "Contact Animator GK | Freelance 3D Artist in Coimbatore",
-  "Contact Animator GK, a freelance 3D artist and motion designer based in Coimbatore, Tamil Nadu, India. Get in touch for 3D animation, explainer videos, motion graphics, ArchViz and creative projects."
-);
+  "Contact Animator GK | Freelance 3D Artist & Motion Designer in Coimbatore",
+  "Get in touch with Animator GK, an independent 3D visualization and motion design partner for brands and businesses based in Coimbatore, India. Contact me for 3D product visualization, furniture renders, architectural visualization, Interior Renders, 3D animation, Video Editing, 2D & 3D explainer videos and motion graphics.",
+    "/contact"
+  );
   return (
     <section className="contact-page">
 

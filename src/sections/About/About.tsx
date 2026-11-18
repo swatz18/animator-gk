@@ -8,9 +8,10 @@ import usePageSEO from "../../hooks/usePageSEO";
 
 function About() {
   usePageSEO(
-  "About Animator GK | Freelance 3D Artist in Coimbatore",
-  "Meet Animator GK, a freelance 3D artist, motion designer and explainer video artist based in Coimbatore, Tamil Nadu, India. Explore my animation, motion graphics, product visualization and ArchViz services."
-);
+    "About Animator GK | 3D Artist & Motion Designer in Coimbatore",
+    "Meet Animator GK, an independent 3D visualization and motion design partner for businesses and brands. Specializing in 3D product rendering, architectural and interior visualization, 3D animation, video editing, and 2D & 3D explainer videos. Based in Coimbatore, India, serving clients worldwide.",
+    "/about"
+  );
   return (
     <main className="about-page">
       
@@ -18,12 +19,12 @@ function About() {
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfilePage",
-          "url": "https://animatorgk.com/about",
+          "url": "https://www.animatorgk.com/about",
           "mainEntity": {
             "@type": "Person",
-            "@id": "https://animatorgk.com/about#person",
+            "@id": "https://www.animatorgk.com/about#person",
             "name": "Animator GK",
-            "url": "https://animatorgk.com/",
+            "url": "https://www.animatorgk.com/",
             "jobTitle": [
               "3D Artist",
               "Motion Designer",

@@ -202,8 +202,9 @@ const categories: Category[] = [
 
 function Work() {
   usePageSEO(
-    "Animation Portfolio | 3D Artist & Motion Designer | Animator GK",
-    "Explore the animation portfolio of Animator GK, a freelance 3D artist and motion designer in Coimbatore, India. Discover product visualization, architectural visualization, 3D animation, video editing, explainer videos and creative work."
+    "Animation Portfolio | 3D Artist & Motion Designer in Coimbatore, India | Animator GK",
+    "Explore Animator GK's portfolio of 3D product visualization, furniture renders, architectural visualization, Interior Renders, 3D animation, Video Editing, 2D & 3D explainer videos and motion graphics. Freelance 3D Artist and Motion Designer based in Coimbatore, India.",
+    "/work"
   );
 
 

@@ -7,9 +7,10 @@ import ShortsGrid from "./ShortsGrid/ShortsGrid";
 
 function Learn() {
   usePageSEO(
-  "Learn Animation in Tamil | Animator GK",
-  "Learn animation and creative techniques in Tamil with Animator GK. Explore educational content about 2D and 3D animation, motion graphics and related creative skills."
-);
+    "Learn Motion Design, 3D Animation & Video Editing in Tamil | Animator GK",
+    "Learn Blender 3D, After Effects, motion graphics, 3D animation, video editing, portfolio building and career development in Tamil with Animator GK. Explore practical tutorials, creative workflows and industry-focused guidance for aspiring 3D artists and motion designers.",
+    "/learn"
+  );
   return (
     <section className="learn-page">
        
